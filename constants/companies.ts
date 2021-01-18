@@ -60,4 +60,4 @@ export const companies = [
       "Creating affordable learning: affordable learning: digital learning platforms, college textbooks, and ebooks",
     targetGroups: ["highered"],
   },
-] as const;
+];

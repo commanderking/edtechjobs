@@ -5,15 +5,14 @@ export type FilterOption = {
 
 export type Roles = FilterOption;
 
-type Department = "engineer" | "pm" | "designer";
+type Role = "engineer" | "pm" | "designer";
 
-type targetGroups = "k12" | "highered" | "workforce";
+type TargetGroup = "k12" | "highered" | "workforce";
 
 export type Job = {
   company: string;
   name: string;
-  department: Department;
-  role: string;
+  role: Role;
   link: string;
   location: string;
 };
@@ -22,7 +21,7 @@ export type Company = {
   id: string;
   name: string;
   description: string;
-  targetGroups: string;
+  targetGroups: TargetGroup[];
   logo: string;
 };
 

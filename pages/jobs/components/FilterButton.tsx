@@ -5,7 +5,6 @@ type Props = {
   children: React.ReactChildren | string;
   isClicked: boolean;
   colorScheme;
-  string;
 };
 const FilterButton = ({ onClick, children, isClicked, colorScheme }: Props) => {
   const variant = isClicked ? "solid" : "outline";

@@ -21,6 +21,7 @@ const FilterStack = ({
       {filters.map((filter, index) => {
         return (
           <FilterButton
+            key={filter.id}
             onClick={() => {
               const newClickedState = clickedFilters[filter.id] ? false : true;
               setClickedFilters({

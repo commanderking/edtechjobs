@@ -1,4 +1,4 @@
-import { FilterOption, Job } from "pages/jobs/types";
+import { FilterOption, Job } from "features/jobs/types";
 import _ from "lodash";
 import { companies } from "constants/companies";
 export const getInitialFilterState = (filters: FilterOption[]) => {

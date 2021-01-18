@@ -1,5 +1,5 @@
 import { Box, Heading, Text, Avatar } from "@chakra-ui/react";
-import { JobDetail } from "pages/jobs/types";
+import { JobDetail } from "features/jobs/types";
 
 type Props = {
   jobDetail: JobDetail;

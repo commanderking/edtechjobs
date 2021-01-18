@@ -1,6 +1,6 @@
 import { Stack, Text } from "@chakra-ui/react";
-import { FilterOption } from "pages/jobs/types";
-import FilterButton from "pages/jobs/components/FilterButton";
+import { FilterOption } from "features/jobs/types";
+import FilterButton from "features/jobs/components/FilterButton";
 
 type Props = {
   filters: FilterOption[];

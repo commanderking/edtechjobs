@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Head from "next/head";
 import { Heading, Box, Button, Divider, Grid, Text } from "@chakra-ui/react";
-import FilterStack from "pages/jobs/components/FilterStack";
-import JobCard from "pages/jobs/components/JobCard";
-import { roles, targetGroups } from "pages/jobs/constants";
+import FilterStack from "features/jobs/components/FilterStack";
+import JobCard from "features/jobs/components/JobCard";
+import { roles, targetGroups } from "features/jobs/constants";
 
-import { getInitialFilterState, getFormattedJobs } from "pages/jobs/utils";
+import { getInitialFilterState, getFormattedJobs } from "features/jobs/utils";
 import { data } from "data/data_01_16_21";
 
 const JobsContainer = () => {

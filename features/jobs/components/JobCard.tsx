@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Avatar } from "@chakra-ui/react";
 import { JobDetail } from "features/jobs/types";
-
+import { externalLinkEvent } from "utils/gtag";
 type Props = {
   jobDetail: JobDetail;
 };
@@ -13,7 +13,7 @@ type Props = {
 const JobCard = ({ jobDetail }: Props) => {
   const { name, link, location, companyDetails } = jobDetail;
   return (
-    <a href={link} target="_blank">
+    <a href={link} target="_blank" onClick={() => externalLinkEvent(link)}>
       <Box
         p={5}
         shadow="md"

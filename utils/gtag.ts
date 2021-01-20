@@ -24,3 +24,12 @@ export const event = ({ action, category, label, value }: GTagEvent) => {
     value: value,
   });
 };
+
+export const externalLinkEvent = (url: string) => {
+  event({
+    action: "external_link_click",
+    category: "external_link",
+    label: url,
+    value: 1,
+  });
+};

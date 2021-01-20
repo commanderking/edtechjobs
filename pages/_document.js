@@ -21,9 +21,17 @@ export default class MyDocument extends Document {
               gtag('config', '${GA_TRACKING_ID}', {
                 page_path: window.location.pathname,
               });
+              var captureOutboundLink = function(url){" "}
+              {ga("send", "event", "outbound", "click", url, {
+                transport: "beacon",
+                hitCallback: function () {
+                  document.location = url;
+                },
+              })}
           `,
             }}
           />
+          <script></script>
         </Head>
         <body>
           <Main />

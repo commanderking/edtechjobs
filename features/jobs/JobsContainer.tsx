@@ -7,6 +7,7 @@ import { roles, targetGroups } from "features/jobs/constants";
 
 import { getInitialFilterState, getFormattedJobs } from "features/jobs/utils";
 import { data } from "data/data_01_16_21";
+import { event } from "utils/gtag";
 
 const JobsContainer = () => {
   const [clickedRoles, setClickedRoles] = useState(
@@ -19,7 +20,6 @@ const JobsContainer = () => {
 
   // @ts-ignore - data is read only currently - Job is mutable?
   const jobs = getFormattedJobs(data, clickedRoles, clickedTargetGroups);
-  console.log("jobs", jobs);
 
   return (
     <div>
@@ -29,38 +29,48 @@ const JobsContainer = () => {
       </Head>
 
       <main>
-        <Box justifyContent="center" textAlign="center">
-          <Heading size="xl" mb="2">
-            Make your impact in Boston's edtech ecosystem
-          </Heading>
-          <Text>Last updated - 1/18/2021 </Text>
-          <a
-            href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
-            target="_blank"
-          >
-            <Button>Sign up For Job Updates</Button>
-          </a>
-          <FilterStack
-            label="Role"
-            filters={roles}
-            clickedFilters={clickedRoles}
-            setClickedFilters={setClickedRoles}
-          />
-          <FilterStack
-            label="Target Group"
-            filters={targetGroups}
-            clickedFilters={clickedTargetGroups}
-            setClickedFilters={setClickedTargetGroups}
-          />
-        </Box>
-        <Divider />
-        <Box>
-          <Grid templateColumns="repeat(3, 1fr)" gap={6} gridAutoRows="1fr">
-            {jobs.map((job) => {
-              // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
-              return <JobCard jobDetail={job} />;
-            })}
-          </Grid>
+        <Box maxWidth="824px" margin="auto" mt={10}>
+          <Box justifyContent="center" textAlign="center">
+            <Heading size="xl" mb="2">
+              Make your impact in Boston's edtech ecosystem
+            </Heading>
+            <Text>Last updated - 1/18/2021 </Text>
+            <a
+              href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
+              target="_blank"
+              onClick={() =>
+                event({
+                  action: "click_sign_up",
+                  category: "click_sign_up",
+                  label: "event_click",
+                  value: 1,
+                })
+              }
+            >
+              <Button>Sign up For Job Updates</Button>
+            </a>
+            <FilterStack
+              label="Role"
+              filters={roles}
+              clickedFilters={clickedRoles}
+              setClickedFilters={setClickedRoles}
+            />
+            <FilterStack
+              label="Target Group"
+              filters={targetGroups}
+              clickedFilters={clickedTargetGroups}
+              setClickedFilters={setClickedTargetGroups}
+            />
+          </Box>
+          <Divider mb={4} />
+          <Box>
+            <Grid templateColumns="repeat(3, 1fr)" gap={6} gridAutoRows="1fr">
+              {jobs.map((job) => {
+                // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
+                return <JobCard jobDetail={job} />;
+              })}
+            </Grid>
+          </Box>
         </Box>
       </main>
     </div>

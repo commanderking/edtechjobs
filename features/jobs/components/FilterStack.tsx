@@ -16,7 +16,7 @@ const FilterStack = ({
   setClickedFilters,
 }: Props) => {
   return (
-    <Stack spacing={4} direction="row" align="center">
+    <Stack spacing={4} direction="row" align="center" mt={4} mb={4}>
       <Text fontSize="xl">{label}</Text>
       {filters.map((filter, index) => {
         return (

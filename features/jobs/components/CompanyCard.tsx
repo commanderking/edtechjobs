@@ -15,7 +15,7 @@ type Props = {
 const CompanyCard = ({ companyWithJobs }: Props) => {
   const { name, description, logo } = companyWithJobs;
   return (
-    <Box>
+    <Box mb={5}>
       {/* <Avatar src={logo} size="2xl" /> */}
 
       <Heading size="lg">{name}</Heading>

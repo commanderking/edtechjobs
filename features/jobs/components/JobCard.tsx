@@ -5,11 +5,6 @@ type Props = {
   jobDetail: JobDetail;
 };
 
-// department: Department;
-// role: string;
-// link: string;
-// location: string;
-
 const JobCard = ({ jobDetail }: Props) => {
   const { name, link, location, companyDetails } = jobDetail;
   return (

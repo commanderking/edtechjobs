@@ -87,7 +87,7 @@ const JobsContainer = () => {
 
             {companies.map((company) => {
               return (
-                <Box mb={20}>
+                <Box mb={10}>
                   <CompanyCard companyWithJobs={company} />
                   <SimpleGrid
                     // templateColumns="1fr 1fr 1fr"
@@ -101,6 +101,7 @@ const JobsContainer = () => {
                       return <JobCard jobDetail={job} />;
                     })}
                   </SimpleGrid>
+                  <Divider mt={10} />
                 </Box>
               );
             })}

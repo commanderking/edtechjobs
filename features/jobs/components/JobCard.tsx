@@ -18,11 +18,10 @@ const JobCard = ({ jobDetail }: Props) => {
         borderRadius="md"
         textAlign="center"
         maxWidth="400px"
-        // margin={["inherit", "auto", "auto"]}
       >
         <Avatar src={companyDetails.logo} size="2xl" />
         <Heading fontSize="lg">{name}</Heading>
-        <Text mt={4}>{companyDetails.name}</Text>
+        <Text>{location}</Text>
       </Box>
     </a>
   );

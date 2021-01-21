@@ -48,37 +48,40 @@ const JobsContainer = () => {
       <main>
         <Box maxWidth="824px" margin="auto" padding="20px" mt={10}>
           <Box justifyContent="center" textAlign="center">
-            <Heading size="xl" mb="2">
-              Make your impact in Boston's edtech ecosystem
-            </Heading>
-            <Text>Last updated - 1/18/2021 </Text>
-            <a
-              href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
-              target="_blank"
-              onClick={() =>
-                event({
-                  action: "click_sign_up",
-                  category: "click_sign_up",
-                  label: "event_click",
-                  value: 1,
-                })
-              }
-            >
-              <Button>Sign up For Job Updates</Button>
-            </a>
-            <FilterStack
-              label="Role"
-              filters={roles}
-              clickedFilters={clickedRoles}
-              setClickedFilters={setClickedRoles}
-            />
-            <FilterStack
-              label="Target Group"
-              filters={targetGroups}
-              clickedFilters={clickedTargetGroups}
-              setClickedFilters={setClickedTargetGroups}
-            />
+            <Box>
+              <Heading size="xl" mb="2">
+                Find your career in Boston edtech
+              </Heading>
+              <Text mb={5}>Last updated - 1/18/2021 </Text>
+              <a
+                href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
+                target="_blank"
+                onClick={() =>
+                  event({
+                    action: "click_sign_up",
+                    category: "click_sign_up",
+                    label: "event_click",
+                    value: 1,
+                  })
+                }
+              >
+                <Button mb={5}>Sign up For Job Updates</Button>
+              </a>
+            </Box>
           </Box>
+          <Heading size="md">Select Job and Company Info</Heading>
+          <FilterStack
+            label="Role"
+            filters={roles}
+            clickedFilters={clickedRoles}
+            setClickedFilters={setClickedRoles}
+          />
+          <FilterStack
+            label="Target Group"
+            filters={targetGroups}
+            clickedFilters={clickedTargetGroups}
+            setClickedFilters={setClickedTargetGroups}
+          />
           <Box>
             <Heading size="xl" mb={2} mt={20}>
               Companies and Jobs

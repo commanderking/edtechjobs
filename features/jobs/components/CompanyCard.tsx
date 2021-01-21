@@ -1,12 +1,4 @@
-import {
-  Heading,
-  Box,
-  Button,
-  Divider,
-  Grid,
-  Text,
-  Avatar,
-} from "@chakra-ui/react";
+import { Heading, Box, Text } from "@chakra-ui/react";
 import { CompanyWithJobs } from "features/jobs/types";
 type Props = {
   companyWithJobs: CompanyWithJobs;

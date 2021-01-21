@@ -1,11 +1,24 @@
 import { useState } from "react";
 import Head from "next/head";
-import { Heading, Box, Button, Divider, Grid, Text } from "@chakra-ui/react";
+import {
+  Heading,
+  Box,
+  Button,
+  Divider,
+  SimpleGrid,
+  Text,
+  Flex,
+} from "@chakra-ui/react";
 import FilterStack from "features/jobs/components/FilterStack";
 import JobCard from "features/jobs/components/JobCard";
+import CompanyCard from "features/jobs/components/CompanyCard";
 import { roles, targetGroups } from "features/jobs/constants";
 
-import { getInitialFilterState, getFormattedJobs } from "features/jobs/utils";
+import {
+  getInitialFilterState,
+  getFormattedJobs,
+  getCompanyWithJobs,
+} from "features/jobs/utils";
 import { data } from "data/data_01_16_21";
 import { event } from "utils/gtag";
 
@@ -21,6 +34,10 @@ const JobsContainer = () => {
   // @ts-ignore - data is read only currently - Job is mutable?
   const jobs = getFormattedJobs(data, clickedRoles, clickedTargetGroups);
 
+  // @ts-ignore - data is read only currently - Job is mutable?
+  const companies = getCompanyWithJobs(data, clickedRoles, clickedTargetGroups);
+
+  console.log("jobs", jobs);
   return (
     <div>
       <Head>
@@ -29,7 +46,7 @@ const JobsContainer = () => {
       </Head>
 
       <main>
-        <Box maxWidth="824px" margin="auto" mt={10}>
+        <Box maxWidth="824px" margin="auto" padding="20px" mt={10}>
           <Box justifyContent="center" textAlign="center">
             <Heading size="xl" mb="2">
               Make your impact in Boston's edtech ecosystem
@@ -62,14 +79,31 @@ const JobsContainer = () => {
               setClickedFilters={setClickedTargetGroups}
             />
           </Box>
-          <Divider mb={4} />
           <Box>
-            <Grid templateColumns="repeat(3, 1fr)" gap={6} gridAutoRows="1fr">
-              {jobs.map((job) => {
-                // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
-                return <JobCard jobDetail={job} />;
-              })}
-            </Grid>
+            <Heading size="xl" mb={2} mt={20}>
+              Companies and Jobs
+            </Heading>
+            <Divider mb={4} />
+
+            {companies.map((company) => {
+              return (
+                <Box mb={20}>
+                  <CompanyCard companyWithJobs={company} />
+                  <SimpleGrid
+                    // templateColumns="1fr 1fr 1fr"
+                    // gap={6}
+                    // gridAutoRows="1fr"
+                    spacing="40px"
+                    minChildWidth={"250px"}
+                  >
+                    {company.jobs.map((job) => {
+                      // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
+                      return <JobCard jobDetail={job} />;
+                    })}
+                  </SimpleGrid>
+                </Box>
+              );
+            })}
           </Box>
         </Box>
       </main>

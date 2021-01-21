@@ -72,5 +72,35 @@ export const getFormattedJobs = (
 ) => {
   const filteredJobs = getFilteredJobs(jobs, roleFilters, targetGroupFilters);
 
+  const jobByCompany = _.groupBy(filteredJobs, "company");
+
+  const companiesWithJobs = _.map(jobByCompany, (companyJobs: any) => {
+    return {
+      ...companyJobs[0].companyDetails,
+      jobs: companyJobs,
+    };
+  });
+
+  console.log("companiesWithJobs", companiesWithJobs);
+
   return filteredJobs;
+};
+
+export const getCompanyWithJobs = (
+  jobs: Job[],
+  roleFilters,
+  targetGroupFilters
+) => {
+  const filteredJobs = getFilteredJobs(jobs, roleFilters, targetGroupFilters);
+
+  const jobByCompany = _.groupBy(filteredJobs, "company");
+
+  const companiesWithJobs = _.map(jobByCompany, (companyJobs: any) => {
+    return {
+      ...companyJobs[0].companyDetails,
+      jobs: companyJobs,
+    };
+  });
+
+  return companiesWithJobs;
 };

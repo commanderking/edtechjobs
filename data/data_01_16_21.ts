@@ -204,4 +204,31 @@ export const data = [
     link: "https://boards.greenhouse.io/panoramaed/jobs/2529283",
     location: "Boston",
   },
+  {
+    id: "Cengage",
+    company: "Cengage",
+    role: "engineer",
+    name: "Senior Software Engineer (C# and JavaScript)",
+    link:
+      "https://cengage.wd5.myworkdayjobs.com/en-US/CengageNorthAmericaCareers/job/US-Boston-Massachusetts/Senior-Software-Engineer--C--and-JavaScript-_R2021-32",
+    location: "Boston",
+  },
+  {
+    id: "Cengage",
+    company: "Cengage",
+    role: "pm",
+    name: "Product Manager",
+    link:
+      "https://cengage.wd5.myworkdayjobs.com/en-US/CengageNorthAmericaCareers/job/US-Boston-Massachusetts/Product-Manager_R0002568",
+    location: "Boston",
+  },
+  {
+    id: "Cengage",
+    company: "Cengage",
+    role: "pm",
+    name: "Technical Product Manager-1",
+    link:
+      "https://cengage.wd5.myworkdayjobs.com/en-US/CengageNorthAmericaCareers/job/US-Boston-Massachusetts/Technical-Product-Manager-1_R0002367",
+    location: "Boston",
+  },
 ];

@@ -28,3 +28,7 @@ export type Company = {
 export type JobDetail = Job & {
   companyDetails: Company;
 };
+
+export type CompanyWithJobs = Company & {
+  jobs: Job[];
+};

@@ -59,5 +59,6 @@ export const companies = [
     description:
       "Creating affordable learning: affordable learning: digital learning platforms, college textbooks, and ebooks",
     targetGroups: ["highered"],
+    logo: "cengage_logo.png",
   },
 ];

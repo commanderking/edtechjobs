@@ -16,15 +16,17 @@ const JobCard = ({ jobDetail }: Props) => {
     <a href={link} target="_blank" onClick={() => externalLinkEvent(link)}>
       <Box
         p={5}
+        height="100%"
         shadow="md"
         borderWidth="1px"
         flex="1"
         borderRadius="md"
         textAlign="center"
-        //   {...rest}
+        maxWidth="400px"
+        // margin={["inherit", "auto", "auto"]}
       >
         <Avatar src={companyDetails.logo} size="2xl" />
-        <Heading fontSize="xl">{name}</Heading>
+        <Heading fontSize="lg">{name}</Heading>
         <Text mt={4}>{companyDetails.name}</Text>
       </Box>
     </a>

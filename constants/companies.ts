@@ -57,7 +57,7 @@ export const companies = [
     id: "Cengage",
     name: "Cengage",
     description:
-      "Creating affordable learning: affordable learning: digital learning platforms, college textbooks, and ebooks",
+      "Creating affordable learning: digital learning platforms, college textbooks, and ebooks",
     targetGroups: ["highered"],
     logo: "cengage_logo.png",
   },

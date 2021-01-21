@@ -1,6 +1,28 @@
 import { FilterOption, Job } from "features/jobs/types";
 import _ from "lodash";
 import { companies } from "constants/companies";
+
+function shuffle(inputArray) {
+  const array = [...inputArray];
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 export const getInitialFilterState = (filters: FilterOption[]) => {
   return filters.reduce((stateMap, role) => {
     return {
@@ -35,20 +57,14 @@ const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
   }
 
   if (activeTargetGroupFilters.length) {
-    console.log("filteredJobs", filteredJobs);
-    console.log("companiesById", companiesById);
-
     filteredJobs = filteredJobs.filter((job) => {
       const { company } = job;
 
-      console.log("company", companiesById[company]);
       const targetGroupFiltered = companiesById[company].targetGroups.map(
         (group) => {
           return activeTargetGroupFilters.includes(group);
         }
       );
-
-      console.log("targetGroupFiltered", targetGroupFiltered);
 
       return targetGroupFiltered.some(Boolean);
       //   return activeTargetGroupFilters.includes(
@@ -81,8 +97,6 @@ export const getFormattedJobs = (
     };
   });
 
-  console.log("companiesWithJobs", companiesWithJobs);
-
   return filteredJobs;
 };
 
@@ -102,5 +116,6 @@ export const getCompanyWithJobs = (
     };
   });
 
-  return companiesWithJobs;
+  // Maybe this is bad UI wise, but it's nice to be equitable by shuffling random companies to the top
+  return shuffle(companiesWithJobs);
 };

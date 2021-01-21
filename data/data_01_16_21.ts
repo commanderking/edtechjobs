@@ -166,7 +166,7 @@ export const data = [
     id: "Houghton Mifflin Harcourt",
     company: "Houghton Mifflin Harcourt",
     role: "designer",
-    name: "Seniro UI Designer",
+    name: "Senior UI Designer",
     link:
       "https://careers.hmhco.com/job/Boston-Sr-UI-Designer-MA-02110/678083200/",
     location: "Boston, MA",

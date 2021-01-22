@@ -117,5 +117,5 @@ export const getCompanyWithJobs = (
   });
 
   // Maybe this is bad UI wise, but it's nice to be equitable by shuffling random companies to the top
-  return shuffle(companiesWithJobs);
+  return companiesWithJobs;
 };

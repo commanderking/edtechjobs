@@ -52,7 +52,7 @@ export const data = [
     company: "Curriculum Associates",
     role: "pm",
     name: "Product Manager, Spanish Reading",
-    link: "",
+    link: "https://jobs.jobvite.com/curriculumassociates/job/owh9efwU",
     location: "Remote, United States",
   },
   // {

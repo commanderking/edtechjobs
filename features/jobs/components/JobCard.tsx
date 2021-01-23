@@ -1,5 +1,7 @@
 import { Box, Heading, Text, Avatar } from "@chakra-ui/react";
 import { JobDetail } from "features/jobs/types";
+import { plausibleJobClick } from "utils/plausible";
+
 type Props = {
   jobDetail: JobDetail;
 };
@@ -7,7 +9,13 @@ type Props = {
 const JobCard = ({ jobDetail }: Props) => {
   const { name, link, location, companyDetails } = jobDetail;
   return (
-    <a href={link} target="_blank">
+    <a
+      href={link}
+      target="_blank"
+      onClick={() => {
+        plausibleJobClick(link);
+      }}
+    >
       <Box
         p={5}
         height="100%"

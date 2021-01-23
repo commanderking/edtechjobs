@@ -1,7 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-import { GA_TRACKING_ID } from "utils/gtag";
-
 export default class MyDocument extends Document {
   render() {
     return (
@@ -12,6 +10,13 @@ export default class MyDocument extends Document {
             defer
             data-domain="bostonedtechjobs.netlify.app"
             src="https://plausible.io/js/plausible.js"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+              `,
+            }}
           ></script>
         </Head>
         <body>

@@ -20,7 +20,6 @@ import {
   getCompanyWithJobs,
 } from "features/jobs/utils";
 import { data } from "data/data_01_16_21";
-import { event } from "utils/gtag";
 
 const JobsContainer = () => {
   const [clickedRoles, setClickedRoles] = useState(
@@ -67,14 +66,14 @@ const JobsContainer = () => {
                 <a
                   href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
                   target="_blank"
-                  onClick={() =>
-                    event({
-                      action: "click_sign_up",
-                      category: "click_sign_up",
-                      label: "event_click",
-                      value: 1,
-                    })
-                  }
+                  // onClick={() =>
+                  //   event({
+                  //     action: "click_sign_up",
+                  //     category: "click_sign_up",
+                  //     label: "event_click",
+                  //     value: 1,
+                  //   })
+                  // }
                 >
                   <Button mb={5} variant="outline" colorScheme="red">
                     Sign up For Job Updates

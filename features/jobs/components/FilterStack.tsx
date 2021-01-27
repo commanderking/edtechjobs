@@ -1,4 +1,4 @@
-import { Stack, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Stack, Text, Wrap, WrapItem, Box, Divider } from "@chakra-ui/react";
 import { FilterOption } from "features/jobs/types";
 import FilterButton from "features/jobs/components/FilterButton";
 
@@ -16,32 +16,36 @@ const FilterStack = ({
   setClickedFilters,
 }: Props) => {
   return (
-    <Stack
-      spacing={4}
-      direction={["column", "row"]}
-      align="center"
-      mt={4}
-      mb={4}
-    >
-      <Text fontSize="xl">{label}</Text>
-      {filters.map((filter, index) => {
-        return (
-          <FilterButton
-            key={filter.id}
-            onClick={() => {
-              const newClickedState = clickedFilters[filter.id] ? false : true;
-              setClickedFilters({
-                ...clickedFilters,
-                [filter.id]: newClickedState,
-              });
-            }}
-            isClicked={clickedFilters[filter.id]}
-            colorScheme="teal"
-          >
-            {filter.name}
-          </FilterButton>
-        );
-      })}
+    <Stack direction={["column", "row"]} align="center" mt={8} mb={8}>
+      <Box>
+        <Text fontSize="xl" textAlign="left" mr={4}>
+          {label}
+        </Text>
+      </Box>
+      <Wrap>
+        {filters.map((filter, index) => {
+          return (
+            <WrapItem>
+              <FilterButton
+                key={filter.id}
+                onClick={() => {
+                  const newClickedState = clickedFilters[filter.id]
+                    ? false
+                    : true;
+                  setClickedFilters({
+                    ...clickedFilters,
+                    [filter.id]: newClickedState,
+                  });
+                }}
+                isClicked={clickedFilters[filter.id]}
+                colorScheme="teal"
+              >
+                {filter.name}
+              </FilterButton>
+            </WrapItem>
+          );
+        })}
+      </Wrap>
     </Stack>
   );
 };

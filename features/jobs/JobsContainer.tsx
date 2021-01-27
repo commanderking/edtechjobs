@@ -30,16 +30,19 @@ const JobsContainer = () => {
     getInitialFilterState(targetGroups)
   );
 
-  const [companies, setCompanies] = useState([]);
-
-  useEffect(() => {
-    const companies = getCompanyWithJobs(
+  const [companies, setCompanies] = useState(
+    getCompanyWithJobs(
       // @ts-ignore - data is read only currently - Job is mutable?
       data,
       clickedRoles,
       clickedTargetGroups
-    );
+    )
+  );
 
+  // Important to shuffle inside useEffect because of server side rendering
+  // Doing outside will result in text not matching server text
+  // https://github.com/vercel/next.js/issues/3108
+  useEffect(() => {
     setCompanies(shuffle(companies));
   }, [data, clickedRoles, clickedTargetGroups]);
 

@@ -25,9 +25,8 @@ const FilterStack = ({
       <Wrap>
         {filters.map((filter, index) => {
           return (
-            <WrapItem>
+            <WrapItem key={filter.id}>
               <FilterButton
-                key={filter.id}
                 onClick={() => {
                   const newClickedState = clickedFilters[filter.id]
                     ? false

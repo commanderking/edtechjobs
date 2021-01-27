@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import {
   Heading,
@@ -16,8 +16,8 @@ import { roles, targetGroups } from "features/jobs/constants";
 
 import {
   getInitialFilterState,
-  getFormattedJobs,
   getCompanyWithJobs,
+  shuffle,
 } from "features/jobs/utils";
 import { data } from "data/data_01_16_21";
 
@@ -30,11 +30,18 @@ const JobsContainer = () => {
     getInitialFilterState(targetGroups)
   );
 
-  // @ts-ignore - data is read only currently - Job is mutable?
-  const jobs = getFormattedJobs(data, clickedRoles, clickedTargetGroups);
+  const [companies, setCompanies] = useState([]);
 
-  // @ts-ignore - data is read only currently - Job is mutable?
-  const companies = getCompanyWithJobs(data, clickedRoles, clickedTargetGroups);
+  useEffect(() => {
+    const companies = getCompanyWithJobs(
+      // @ts-ignore - data is read only currently - Job is mutable?
+      data,
+      clickedRoles,
+      clickedTargetGroups
+    );
+
+    setCompanies(shuffle(companies));
+  }, [data, clickedRoles, clickedTargetGroups]);
 
   return (
     <div>
@@ -95,12 +102,12 @@ const JobsContainer = () => {
           <Box padding={4} border="1px solid lightgray">
             {companies.map((company) => {
               return (
-                <Box mb={10}>
+                <Box mb={10} key={company.id}>
                   <CompanyCard companyWithJobs={company} />
                   <SimpleGrid spacing="40px" minChildWidth={"250px"}>
                     {company.jobs.map((job) => {
                       // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
-                      return <JobCard jobDetail={job} />;
+                      return <JobCard jobDetail={job} key={job.link} />;
                     })}
                   </SimpleGrid>
                   <Divider mt={10} />

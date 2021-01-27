@@ -2,7 +2,7 @@ import { FilterOption, Job } from "features/jobs/types";
 import _ from "lodash";
 import { companies } from "constants/companies";
 
-function shuffle(inputArray) {
+export function shuffle(inputArray) {
   const array = [...inputArray];
   var currentIndex = array.length,
     temporaryValue,

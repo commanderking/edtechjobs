@@ -5,9 +5,10 @@ export const roles = [
   },
   { id: "pm", name: "Product Manager" },
   { id: "designer", name: "Designer" },
-  // { id: "researcher", name: "Researcher" },
-  // { id: "data", name: "Data Analysis" },
-  // { id: "customer_success", name: "Customer Success" },
+  { id: "research", name: "Researcher" },
+  { id: "data", name: "Data Analyst" },
+  { id: "customer_success", name: "Customer Success" },
+  { id: "ux", name: "User Experience" },
 ];
 
 export const targetGroups = [

@@ -61,4 +61,52 @@ export const companies = [
     targetGroups: ["highered"],
     logo: "cengage_logo.png",
   },
+  {
+    id: "Savvas Learning",
+    name: "Savvas Learning",
+    description:
+      "Helping improve the educational outcomes of all students with innovative, personalized learning experiences",
+    targetGroups: ["k12"],
+    logo: "savvas_learning_logo.png",
+  },
+  {
+    id: "Pearson",
+    name: "Pearson",
+    description:
+      "Shop our online store for online courses, eTexts, textbooks, learning platforms, and rental books",
+    targetGroups: ["highered"],
+    logo: "pearson_logo.png",
+  },
+  {
+    id: "Pluralsight",
+    name: "Pluralsight",
+    description:
+      "helps teams know more and work better together with stronger skills and improved processes",
+    targetGroups: ["workforce"],
+    logo: "pluralsight_logo.png",
+  },
+  {
+    id: "Mentor Collective",
+    name: "Mentor Collective",
+    description:
+      "Providing every student with a relevant mentor by establishing a collective of institutions committed to equity, access, and mentorship",
+    targetGroups: ["highered"],
+    logo: "mentor_collective_logo.png",
+  },
+  {
+    id: "AdmitHub",
+    name: "AdmitHub",
+    description:
+      "Fostering student success with mobile messaging powered by AI",
+    targetGroups: ["higered"],
+    logo: "admithub_logo.png",
+  },
+  {
+    id: "BetterLesson",
+    name: "BetterLesson",
+    description:
+      "Providing personalized, job-embedded, and continuous support for educators ",
+    targetGroups: ["k12"],
+    logo: "betterlesson_logo.png",
+  },
 ];

@@ -1,6 +1,17 @@
-### Coming Next (1-31-21)
+### Tallied Feedback
 
-- Research Roles
+- Experience Level (Entry vs Experienced) x2
+- Including Freelance?
+- Way for employers to add their own postings?
+- Include Remote positions from any company (even outside of Boston)?
+- Instructional Design Filter
+- How long job posting has been active? x2
+- Adding contacts at companies who are in the Boston EdTech Meetup to reach out to for more connections - x2
+
+### 1-31-21
+
+- Add Researcher, Data Analyst, Customer Success, and User Experience Roles
+- Add jobs from new companies - Savvas Learning, Pearson, Pluralsight, Mentor Collective, AdmitHub, Better Lesson
 
 ### 1-16-21
 

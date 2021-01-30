@@ -13,7 +13,7 @@ const JobCard = ({ jobDetail }: Props) => {
       href={link}
       target="_blank"
       onClick={() => {
-        plausibleJobClick(link);
+        plausibleJobClick(link, companyDetails.name);
       }}
     >
       <Box

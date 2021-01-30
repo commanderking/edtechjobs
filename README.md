@@ -1,8 +1,8 @@
 # Boston EdTech Foundation Job Board
 
-This is the repo for the Boston EdTech Job board currently located ["here"](http://localhost:3000/).
+This is the repo for the Boston EdTech Job board currently located [here](http://localhost:3000/).
 
-Until we better understand user needs, we are manually updating this board about every two weeks.
+Until we better understand user needs, we manually update this board about every two weeks.
 
 ## Getting Started
 

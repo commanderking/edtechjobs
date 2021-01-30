@@ -13,7 +13,7 @@ const JobCard = ({ jobDetail }: Props) => {
       href={link}
       target="_blank"
       onClick={() => {
-        plausibleJobClick(link);
+        plausibleJobClick(link, companyDetails.name);
       }}
     >
       <Box
@@ -26,7 +26,10 @@ const JobCard = ({ jobDetail }: Props) => {
         textAlign="center"
         maxWidth="400px"
       >
-        <Avatar src={companyDetails.logo} size="2xl" />
+        <Avatar
+          src={(companyDetails && companyDetails.logo) || ""}
+          size="2xl"
+        />
         <Heading fontSize="lg">{name}</Heading>
         <Text>{location}</Text>
       </Box>

@@ -81,25 +81,6 @@ const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
   });
 };
 
-export const getFormattedJobs = (
-  jobs: Job[],
-  roleFilters,
-  targetGroupFilters
-) => {
-  const filteredJobs = getFilteredJobs(jobs, roleFilters, targetGroupFilters);
-
-  const jobByCompany = _.groupBy(filteredJobs, "company");
-
-  const companiesWithJobs = _.map(jobByCompany, (companyJobs: any) => {
-    return {
-      ...companyJobs[0].companyDetails,
-      jobs: companyJobs,
-    };
-  });
-
-  return filteredJobs;
-};
-
 export const getCompanyWithJobs = (
   jobs: Job[],
   roleFilters,

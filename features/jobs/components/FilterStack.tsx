@@ -1,7 +1,7 @@
 import { Stack, Text, Wrap, WrapItem, Box, Divider } from "@chakra-ui/react";
 import { FilterOption } from "features/jobs/types";
 import FilterButton from "features/jobs/components/FilterButton";
-
+import { filterClick } from "utils/plausible";
 type Props = {
   filters: FilterOption[];
   clickedFilters: Object;
@@ -28,6 +28,7 @@ const FilterStack = ({
             <WrapItem key={filter.id}>
               <FilterButton
                 onClick={() => {
+                  filterClick(filter.id);
                   const newClickedState = clickedFilters[filter.id]
                     ? false
                     : true;

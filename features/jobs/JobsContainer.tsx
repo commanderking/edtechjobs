@@ -19,7 +19,7 @@ import {
   getCompanyWithJobs,
   shuffle,
 } from "features/jobs/utils";
-import { data } from "data/data_01_16_21";
+import { data } from "data/data_01_29_21";
 
 const JobsContainer = () => {
   const [clickedRoles, setClickedRoles] = useState(
@@ -30,20 +30,22 @@ const JobsContainer = () => {
     getInitialFilterState(targetGroups)
   );
 
-  const [companies, setCompanies] = useState(
-    getCompanyWithJobs(
-      // @ts-ignore - data is read only currently - Job is mutable?
-      data,
-      clickedRoles,
-      clickedTargetGroups
-    )
-  );
+  const [companies, setCompanies] = useState([]);
 
   // Important to shuffle inside useEffect because of server side rendering
   // Doing outside will result in text not matching server text
   // https://github.com/vercel/next.js/issues/3108
   useEffect(() => {
-    setCompanies(shuffle(companies));
+    setCompanies(
+      shuffle(
+        getCompanyWithJobs(
+          // @ts-ignore - data is read only currently - Job is mutable?
+          data,
+          clickedRoles,
+          clickedTargetGroups
+        )
+      )
+    );
   }, [data, clickedRoles, clickedTargetGroups]);
 
   return (
@@ -60,7 +62,7 @@ const JobsContainer = () => {
               <Heading size="xl" mb="2">
                 Find your career in Boston edtech
               </Heading>
-              <Text mb={5}>
+              <Text>
                 Created by the{" "}
                 <Link
                   color="blue.500"
@@ -69,9 +71,11 @@ const JobsContainer = () => {
                 >
                   Boston EdTech Meetup
                 </Link>{" "}
-                (Last updated - 1/18/2021)
               </Text>
-              <Box>
+              <Text>
+                Updated about every two weeks (Last update - 1/18/2021)
+              </Text>
+              <Box mt={4}>
                 <a
                   href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
                   target="_blank"

@@ -5,7 +5,7 @@ export type FilterOption = {
 
 export type Roles = FilterOption;
 
-type Role = "engineer" | "pm" | "designer";
+export type Role = "engineer" | "pm" | "designer";
 
 type TargetGroup = "k12" | "highered" | "workforce";
 

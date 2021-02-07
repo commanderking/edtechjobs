@@ -7,13 +7,13 @@ type Props = {
 };
 
 const JobCard = ({ jobDetail }: Props) => {
-  const { name, link, location, companyDetails } = jobDetail;
+  const { name, link, location, companyDetails, role } = jobDetail;
   return (
     <a
       href={link}
       target="_blank"
       onClick={() => {
-        plausibleJobClick(link, companyDetails.name);
+        plausibleJobClick(link, companyDetails.name, role);
       }}
     >
       <Box

@@ -109,4 +109,12 @@ export const companies = [
     targetGroups: ["k12"],
     logo: "betterlesson_logo.png",
   },
+  {
+    id: "Lexia Learning",
+    name: "Lexia Learning",
+    description:
+      "Empowering educators through adaptive assessment and personalized instruction",
+    targetGroups: ["k12"],
+    logo: "lexia_logo.png",
+  },
 ];

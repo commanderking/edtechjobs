@@ -19,7 +19,7 @@ import {
   getCompanyWithJobs,
   shuffle,
 } from "features/jobs/utils";
-import { data } from "data/data_01_29_21";
+import { data } from "data/data_02_13_21";
 
 const JobsContainer = () => {
   const [clickedRoles, setClickedRoles] = useState(
@@ -113,6 +113,7 @@ const JobsContainer = () => {
                   <CompanyCard companyWithJobs={company} />
                   <SimpleGrid spacing="40px" minChildWidth={"250px"}>
                     {company.jobs.map((job) => {
+                      console.log("job", job);
                       // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
                       return <JobCard jobDetail={job} key={job.link} />;
                     })}

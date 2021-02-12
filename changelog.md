@@ -8,6 +8,7 @@
 - How long job posting has been active? x2
 - Adding contacts at companies who are in the Boston EdTech Meetup to reach out to for more connections - x2
 - Submission from smaller companies who may not post on their own website
+- Add more compact list view
 
 ### 1-31-21
 

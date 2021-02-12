@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Avatar } from "@chakra-ui/react";
+import { Box, Heading, Text, Avatar, Badge } from "@chakra-ui/react";
 import { JobDetail } from "features/jobs/types";
 import { plausibleJobClick } from "utils/plausible";
 
@@ -7,7 +7,7 @@ type Props = {
 };
 
 const JobCard = ({ jobDetail }: Props) => {
-  const { name, link, location, companyDetails, role } = jobDetail;
+  const { name, link, location, companyDetails, role, isNewPost } = jobDetail;
   return (
     <a
       href={link}
@@ -26,11 +26,14 @@ const JobCard = ({ jobDetail }: Props) => {
         textAlign="center"
         maxWidth="400px"
       >
-        <Avatar
-          src={(companyDetails && companyDetails.logo) || ""}
-          size="2xl"
-        />
-        <Heading fontSize="lg">{name}</Heading>
+        <Heading fontSize="lg">
+          {name}
+          {isNewPost && (
+            <Badge colorScheme="green" ml={1}>
+              New
+            </Badge>
+          )}
+        </Heading>
         <Text>{location}</Text>
       </Box>
     </a>

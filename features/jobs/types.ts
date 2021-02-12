@@ -15,6 +15,8 @@ export type Job = {
   role: Role;
   link: string;
   location: string;
+  sharedOn: string;
+  experienceSuggested: string;
 };
 
 export type Company = {
@@ -27,6 +29,7 @@ export type Company = {
 
 export type JobDetail = Job & {
   companyDetails: Company;
+  isNewPost: boolean;
 };
 
 export type CompanyWithJobs = Company & {

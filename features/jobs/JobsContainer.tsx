@@ -19,7 +19,7 @@ import {
   getCompanyWithJobs,
   shuffle,
 } from "features/jobs/utils";
-import { data } from "data/data_01_29_21";
+import { data } from "data/data_02_13_21";
 
 const JobsContainer = () => {
   const [clickedRoles, setClickedRoles] = useState(

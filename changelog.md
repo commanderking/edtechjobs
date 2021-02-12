@@ -1,7 +1,7 @@
 ### Feedback and Potential Future Features
 
-- Experience Level (Entry vs Experienced) x2
-- Including freelance / short term / contract jobs
+- Experience Level (Entry vs Experienced) x3
+- Including freelance / short term / contract jobs (and filters) x2
 - Way for employers to add their own postings?
 - Include Remote positions from any company (even outside of Boston)?
 - Instructional Design Filter

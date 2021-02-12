@@ -113,7 +113,6 @@ const JobsContainer = () => {
                   <CompanyCard companyWithJobs={company} />
                   <SimpleGrid spacing="40px" minChildWidth={"250px"}>
                     {company.jobs.map((job) => {
-                      console.log("job", job);
                       // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
                       return <JobCard jobDetail={job} key={job.link} />;
                     })}

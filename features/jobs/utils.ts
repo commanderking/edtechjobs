@@ -32,6 +32,14 @@ export const getInitialFilterState = (filters: FilterOption[]) => {
   }, {});
 };
 
+const isNewPost = (job: Job) => {
+  if (job.sharedOn === "") {
+    return true;
+  }
+
+  return false;
+};
+
 const getActiveFilters = (filters: { [key: string]: boolean }) => {
   const activeFilters = [];
   for (const [key, value] of Object.entries(filters)) {
@@ -67,9 +75,6 @@ const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
       );
 
       return targetGroupFiltered.some(Boolean);
-      //   return activeTargetGroupFilters.includes(
-      //     companiesById[company].targetGroups
-      //   );
     });
   }
 
@@ -77,6 +82,7 @@ const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
     return {
       ...job,
       companyDetails: companiesById[job.company],
+      isNewPost: isNewPost(job),
     };
   });
 };

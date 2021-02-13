@@ -111,7 +111,7 @@ const JobsContainer = () => {
               return (
                 <Box mb={10} key={company.id}>
                   <CompanyCard companyWithJobs={company} />
-                  <SimpleGrid spacing="40px" minChildWidth={"250px"}>
+                  <SimpleGrid spacing="20px" minChildWidth={"250px"}>
                     {company.jobs.map((job) => {
                       // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
                       return <JobCard jobDetail={job} key={job.link} />;

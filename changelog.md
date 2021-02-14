@@ -1,14 +1,17 @@
 ### Feedback and Potential Future Features
 
-- Experience Level (Entry vs Experienced) x3
 - Including freelance / short term / contract jobs (and filters) x2
-- Way for employers to add their own postings?
+- Way for employers (particularly small companies) to add their own postings x2?
 - Include Remote positions from any company (even outside of Boston)?
 - Instructional Design Filter
 - How long job posting has been active? x2
 - Adding contacts at companies who are in the Boston EdTech Meetup to reach out to for more connections - x2
-- Submission from smaller companies who may not post on their own website
-- Add more compact list view
+
+### 2-13-21
+
+- Add Experience Level Filters and Labels to Jobs
+- More compact view of job postings / company
+- Some indication of which jobs are newly added
 
 ### 1-31-21
 

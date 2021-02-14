@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import {
   Heading,
@@ -8,7 +8,12 @@ import {
   SimpleGrid,
   Text,
   Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
 } from "@chakra-ui/react";
+import { WarningIcon } from "@chakra-ui/icons";
+
 import FilterStack from "features/jobs/components/FilterStack";
 import JobCard from "features/jobs/components/JobCard";
 import CompanyCard from "features/jobs/components/CompanyCard";
@@ -106,7 +111,26 @@ const JobsContainer = () => {
               setClickedFilters={setClickedTargetGroups}
             />
             <FilterStack
-              label="Experience (years)"
+              label={
+                <React.Fragment>
+                  <Text as="span" fontSize="xl" textAlign="left" mr={2}>
+                    {"Experience"}
+                  </Text>
+                  <Popover>
+                    <PopoverTrigger>
+                      <WarningIcon color="red.500" />
+                    </PopoverTrigger>
+                    <PopoverContent>
+                      <Box padding={5}>
+                        We believe you shouldn't let the years of experience
+                        prevent you from applying if you think you're a good
+                        fit. Please use it more as a guideline than a hard
+                        requirement!
+                      </Box>
+                    </PopoverContent>
+                  </Popover>
+                </React.Fragment>
+              }
               filters={experienceLevels}
               clickedFilters={clickedYearsExperience}
               setClickedFilters={setClickedYearsExperience}

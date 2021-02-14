@@ -6,7 +6,7 @@ type Props = {
   filters: FilterOption[];
   clickedFilters: Object;
   setClickedFilters: any;
-  label: string;
+  label: string | React.ReactNode;
 };
 
 const FilterStack = ({
@@ -18,9 +18,13 @@ const FilterStack = ({
   return (
     <Stack direction={["column", "row"]} align="center" mt={8} mb={8}>
       <Box>
-        <Text fontSize="xl" textAlign="left" mr={4}>
-          {label}
-        </Text>
+        {typeof label === "string" ? (
+          <Text fontSize="xl" textAlign="left" mr={4}>
+            {label}
+          </Text>
+        ) : (
+          label
+        )}
       </Box>
       <Wrap>
         {filters.map((filter, index) => {

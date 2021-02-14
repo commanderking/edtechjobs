@@ -9,7 +9,7 @@ export type Role = "engineer" | "pm" | "designer";
 
 type TargetGroup = "k12" | "highered" | "workforce";
 
-type yearsExperience = "0-2" | "3-5" | "6+";
+type YearsExperience = "0-2" | "3-5" | "6+";
 
 export type Job = {
   company: string;

@@ -1,4 +1,4 @@
-import { FilterOption, Job } from "features/jobs/types";
+import { FilterOption, Job, YearsExperience } from "features/jobs/types";
 import _ from "lodash";
 import { companies } from "constants/companies";
 
@@ -50,7 +50,11 @@ const getActiveFilters = (filters: { [key: string]: boolean }) => {
   return activeFilters;
 };
 
-const toRelevantJobsForExperience = (activeYearsExperienceFilters) => (job) => {
+// There's probably a less explicit way through parsing range, but this is fairly
+// explicit and I don't expect the age ranges to change too much
+const toRelevantJobsForExperience = (
+  activeYearsExperienceFilters: YearsExperience[]
+) => (job: Job): boolean => {
   const { experienceSuggested } = job;
   if (experienceSuggested === "N/A") {
     return true;

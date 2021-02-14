@@ -1,4 +1,4 @@
-import { FilterOption, Job } from "features/jobs/types";
+import { FilterOption, Job, YearsExperience } from "features/jobs/types";
 import _ from "lodash";
 import { companies } from "constants/companies";
 
@@ -50,9 +50,38 @@ const getActiveFilters = (filters: { [key: string]: boolean }) => {
   return activeFilters;
 };
 
-const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
+// There's probably a less explicit way through parsing range, but this is fairly
+// explicit and I don't expect the age ranges to change too much
+const toRelevantJobsForExperience = (
+  activeYearsExperienceFilters: YearsExperience[]
+) => (job: Job): boolean => {
+  const { experienceSuggested } = job;
+  if (experienceSuggested === "N/A") {
+    return true;
+  }
+
+  if (activeYearsExperienceFilters.includes("0-2")) {
+    return experienceSuggested >= 0 && experienceSuggested <= 2;
+  }
+
+  if (activeYearsExperienceFilters.includes("3-5")) {
+    return experienceSuggested >= 3 && experienceSuggested <= 5;
+  }
+
+  if (activeYearsExperienceFilters.includes("6+")) {
+    return experienceSuggested >= 6;
+  }
+};
+
+const getFilteredJobs = (
+  jobs: Job[],
+  roleFilters,
+  targetGroupFilters,
+  yearsExperienceFilters
+) => {
   const activeRoleFilters = getActiveFilters(roleFilters);
   const activeTargetGroupFilters = getActiveFilters(targetGroupFilters);
+  const activeYearsExperienceFilters = getActiveFilters(yearsExperienceFilters);
 
   const companiesById = _.keyBy(companies, "id");
 
@@ -78,21 +107,42 @@ const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
     });
   }
 
+  if (activeYearsExperienceFilters.length) {
+    filteredJobs = filteredJobs.filter(
+      toRelevantJobsForExperience(activeYearsExperienceFilters)
+    );
+  }
+
   return filteredJobs.map((job) => {
     return {
       ...job,
       companyDetails: companiesById[job.company],
       isNewPost: isNewPost(job),
+      experienceSuggested: getExperienceSuggested(job.experienceSuggested),
     };
   });
+};
+
+const getExperienceSuggested = (years: number | string) => {
+  if (years === "N/A") {
+    return "Any";
+  }
+
+  return `${years}+ years`;
 };
 
 export const getCompanyWithJobs = (
   jobs: Job[],
   roleFilters,
-  targetGroupFilters
+  targetGroupFilters,
+  yearsExperienceFilters
 ) => {
-  const filteredJobs = getFilteredJobs(jobs, roleFilters, targetGroupFilters);
+  const filteredJobs = getFilteredJobs(
+    jobs,
+    roleFilters,
+    targetGroupFilters,
+    yearsExperienceFilters
+  );
 
   const jobByCompany = _.groupBy(filteredJobs, "company");
 

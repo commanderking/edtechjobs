@@ -25,3 +25,18 @@ export const targetGroups = [
     name: "Workforce",
   },
 ];
+
+export const experienceLevels = [
+  {
+    id: "0-2",
+    name: "0-2 years",
+  },
+  {
+    id: "3-5",
+    name: "3-5 years",
+  },
+  {
+    id: "6+",
+    name: "6+ years",
+  },
+];

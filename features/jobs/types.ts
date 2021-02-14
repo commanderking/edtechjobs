@@ -9,6 +9,8 @@ export type Role = "engineer" | "pm" | "designer";
 
 type TargetGroup = "k12" | "highered" | "workforce";
 
+export type YearsExperience = "0-2" | "3-5" | "6+";
+
 export type Job = {
   company: string;
   name: string;
@@ -16,7 +18,7 @@ export type Job = {
   link: string;
   location: string;
   sharedOn: string;
-  experienceSuggested: string;
+  experienceSuggested: string | number;
 };
 
 export type Company = {
@@ -30,6 +32,7 @@ export type Company = {
 export type JobDetail = Job & {
   companyDetails: Company;
   isNewPost: boolean;
+  experienceSuggested: number | "-";
 };
 
 export type CompanyWithJobs = Company & {

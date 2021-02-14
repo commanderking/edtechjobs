@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import {
   Heading,
@@ -8,11 +8,16 @@ import {
   SimpleGrid,
   Text,
   Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
 } from "@chakra-ui/react";
+import { WarningIcon } from "@chakra-ui/icons";
+
 import FilterStack from "features/jobs/components/FilterStack";
 import JobCard from "features/jobs/components/JobCard";
 import CompanyCard from "features/jobs/components/CompanyCard";
-import { roles, targetGroups } from "features/jobs/constants";
+import { roles, targetGroups, experienceLevels } from "features/jobs/constants";
 
 import {
   getInitialFilterState,
@@ -22,6 +27,10 @@ import {
 import { data } from "data/data_02_13_21";
 
 const JobsContainer = () => {
+  // Overall, this structure of separate state for different filter clicks likely
+  // won't scale well. Likely want a piece of state that takes all filters
+  // [{ filterType: "role", value: "pm "}, ...]
+  // and then parse later with util
   const [clickedRoles, setClickedRoles] = useState(
     getInitialFilterState(roles)
   );
@@ -30,6 +39,9 @@ const JobsContainer = () => {
     getInitialFilterState(targetGroups)
   );
 
+  const [clickedYearsExperience, setClickedYearsExperience] = useState(
+    getInitialFilterState(experienceLevels)
+  );
   const [companies, setCompanies] = useState([]);
 
   // Important to shuffle inside useEffect because of server side rendering
@@ -42,11 +54,12 @@ const JobsContainer = () => {
           // @ts-ignore - data is read only currently - Job is mutable?
           data,
           clickedRoles,
-          clickedTargetGroups
+          clickedTargetGroups,
+          clickedYearsExperience
         )
       )
     );
-  }, [data, clickedRoles, clickedTargetGroups]);
+  }, [data, clickedRoles, clickedTargetGroups, clickedYearsExperience]);
 
   return (
     <div>
@@ -100,6 +113,31 @@ const JobsContainer = () => {
               filters={targetGroups}
               clickedFilters={clickedTargetGroups}
               setClickedFilters={setClickedTargetGroups}
+            />
+            <FilterStack
+              label={
+                <React.Fragment>
+                  <Text as="span" fontSize="xl" textAlign="left" mr={2}>
+                    {"Experience"}
+                  </Text>
+                  <Popover>
+                    <PopoverTrigger>
+                      <WarningIcon color="red.500" />
+                    </PopoverTrigger>
+                    <PopoverContent>
+                      <Box padding={5}>
+                        This is the years of experience listed on the job
+                        posting, but please use it more as a guideline than a
+                        hard requirement! If you think you're a good fit,
+                        consider applying anyway!
+                      </Box>
+                    </PopoverContent>
+                  </Popover>
+                </React.Fragment>
+              }
+              filters={experienceLevels}
+              clickedFilters={clickedYearsExperience}
+              setClickedFilters={setClickedYearsExperience}
             />
           </Box>
           <Heading size="xl" mt={20} mb={2}>

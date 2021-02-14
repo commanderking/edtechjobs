@@ -1,5 +1,25 @@
 export const data = [
   {
+    id: "AceUp",
+    company: "AceUp",
+    role: "engineer",
+    name: "FrontEnd Developer",
+    link: "https://aceup.com/careers/frontend-developer/",
+    location: "Remote, United States",
+    sharedOn: "1/31/2021",
+    experienceSuggested: 2,
+  },
+  {
+    id: "AceUp",
+    company: "AceUp",
+    role: "ux",
+    name: "User Experience Specialist",
+    link: "https://aceup.com/careers/user-experience-specialist/",
+    location: "Remote, United States",
+    sharedOn: "1/31/2021",
+    experienceSuggested: "N/A",
+  },
+  {
     id: "AdmitHub",
     company: "AdmitHub",
     role: "customer_success",
@@ -7,7 +27,7 @@ export const data = [
     link: "https://www.admithub.com/about/jobs/?gh_jid=4308089003",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 3,
   },
   {
     id: "AdmitHub",
@@ -15,9 +35,9 @@ export const data = [
     role: "engineer",
     name: "Senior Full-Stack Software Engineer",
     link: "https://www.admithub.com/about/jobs/?gh_jid=4125284003",
-    location: "Boston, Massachusetts",
+    location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 6,
   },
   {
     id: "BetterLesson",
@@ -25,9 +45,9 @@ export const data = [
     role: "customer_success",
     name: "Customer Success Associate",
     link: "https://betterlesson.com/about-us/jobs/?gh_jid=4278897003",
-    location: "North Billerica, Massachusetts",
+    location: "Cambridge, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 1,
   },
   {
     id: "Cengage",
@@ -36,9 +56,9 @@ export const data = [
     name: "UX Researcher",
     link:
       "https://cengage.wd5.myworkdayjobs.com/en-US/CengageNorthAmericaCareers/job/US-Boston-Massachusetts/UX-Researcher_R2021-124",
-    location: "Remote, United States",
+    location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 4,
   },
   {
     id: "Cengage",
@@ -47,9 +67,9 @@ export const data = [
     name: "UX Researcher",
     link:
       "https://cengage.wd5.myworkdayjobs.com/en-US/CengageNorthAmericaCareers/job/US-Boston-Massachusetts/UX-Researcher_R2021-121",
-    location: "Remote, United States",
+    location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 4,
   },
   {
     id: "Cengage",
@@ -60,7 +80,7 @@ export const data = [
       "https://cengage.wd5.myworkdayjobs.com/en-US/CengageNorthAmericaCareers/job/US-Boston-Massachusetts/Data-Analyst_R0001813",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 3,
   },
   {
     id: "Curriculum Associates",
@@ -68,9 +88,9 @@ export const data = [
     role: "research",
     name: "Statistical Analyst, Psychometrics",
     link: "https://jobs.jobvite.com/curriculumassociates/job/oj2oefwH",
-    location: "Cambridge",
+    location: "North Billerica, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: "N/A",
   },
   {
     id: "Curriculum Associates",
@@ -78,9 +98,9 @@ export const data = [
     role: "engineer",
     name: "Senior/Principal Quality Engineer",
     link: "https://jobs.jobvite.com/curriculumassociates/job/oQkR9fwU",
-    location: "Cambridge",
+    location: "North Billerica, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 3,
   },
   {
     id: "Curriculum Associates",
@@ -88,9 +108,9 @@ export const data = [
     role: "designer",
     name: "Designer, Mathematics",
     link: "https://jobs.jobvite.com/curriculumassociates/job/ofMnefwm",
-    location: "Boston, MA",
+    location: "Remote, United States",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 2,
   },
   {
     id: "Curriculum Associates",
@@ -98,9 +118,9 @@ export const data = [
     role: "pm",
     name: "Product Manager, Spanish Reading",
     link: "https://jobs.jobvite.com/curriculumassociates/job/owh9efwU",
-    location: "Boston, MA",
+    location: "North Billerica, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 3,
   },
   {
     id: "Education First",
@@ -110,7 +130,7 @@ export const data = [
     link: "https://careers.ef.com/job/?jobid=21287",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 4,
   },
   {
     id: "Education First",
@@ -120,7 +140,7 @@ export const data = [
     link: "https://careers.ef.com/job/?jobid=21391",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 1,
   },
   {
     id: "Education First",
@@ -130,7 +150,7 @@ export const data = [
     link: "https://careers.ef.com/job/?jobid=21006",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 7,
   },
   {
     id: "Education First",
@@ -140,7 +160,7 @@ export const data = [
     link: "https://careers.ef.com/job/?jobid=21284",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 5,
   },
   {
     id: "edX",
@@ -148,9 +168,9 @@ export const data = [
     role: "engineer",
     name: "Software Engineer",
     link: "https://boards.greenhouse.io/edx/jobs/2571359",
-    location: "Boston, MA",
+    location: "Cambridge, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 3,
   },
   {
     id: "edX",
@@ -158,9 +178,9 @@ export const data = [
     role: "engineer",
     name: "Software Engineer",
     link: "https://boards.greenhouse.io/edx/jobs/2603421",
-    location: "Boston, MA",
+    location: "Cambridge, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 1,
   },
   {
     id: "edX",
@@ -168,9 +188,9 @@ export const data = [
     role: "pm",
     name: "Product Manager",
     link: "https://boards.greenhouse.io/edx/jobs/2611725",
-    location: "Boston, MA",
+    location: "Boston",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 3,
   },
   {
     id: "Ellevation Education",
@@ -181,7 +201,7 @@ export const data = [
       "https://jobs.lever.co/ellevationeducation/ec61df49-6826-4bbd-a053-a9553d4ae8be",
     location: "Boston",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 1,
   },
   {
     id: "Ellevation Education",
@@ -192,7 +212,7 @@ export const data = [
       "https://jobs.lever.co/ellevationeducation/bdb19038-8b5f-4f9a-99b1-af95f513f2c3",
     location: "Boston",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 5,
   },
   {
     id: "Houghton Mifflin Harcourt",
@@ -203,7 +223,7 @@ export const data = [
       "https://careers.hmhco.com/job/Boston-Sr-UI-Designer-MA-02110/678083200/",
     location: "Boston",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 5,
   },
   {
     id: "Houghton Mifflin Harcourt",
@@ -214,7 +234,7 @@ export const data = [
       "https://careers.hmhco.com/job/Boston-VP-Product-Management-MA-02110/695787300/",
     location: "Boston",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 10,
   },
   {
     id: "Mentor Collective",
@@ -225,7 +245,7 @@ export const data = [
       "https://angel.co/company/mentorcollective/jobs/1165175-staff-engineer",
     location: "Boston",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 8,
   },
   {
     id: "Mentor Collective",
@@ -236,7 +256,7 @@ export const data = [
       "https://angel.co/company/mentorcollective/jobs/1113972-user-experience-designer-ux-ui",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 3,
   },
   {
     id: "Panorama Education",
@@ -246,7 +266,7 @@ export const data = [
     link: "https://boards.greenhouse.io/panoramaed/jobs/2529285",
     location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 5,
   },
   {
     id: "Panorama Education",
@@ -254,9 +274,9 @@ export const data = [
     role: "engineer",
     name: "Software Engineer",
     link: "https://boards.greenhouse.io/panoramaed/jobs/2529283",
-    location: "Boston • United States • Remote",
+    location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 1,
   },
   {
     id: "Pearson",
@@ -265,9 +285,9 @@ export const data = [
     name: "Research and Psychometric Services Analyst",
     link:
       "https://pearson.jobs/boston-ma/research-and-psychometric-services-analyst/D2EDCDE50B0B4C6D928AF26622B5715A/job/",
-    location: "Atlanta • Austin • Boston • Remote",
+    location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 1,
   },
   {
     id: "Pluralsight",
@@ -278,7 +298,7 @@ export const data = [
       "https://pluralsight.wd1.myworkdayjobs.com/en-US/Careers/job/Boston-MA/Senior-Business-Analyst_R0005650",
     location: "Boston MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 5,
   },
   {
     id: "Pluralsight",
@@ -287,9 +307,9 @@ export const data = [
     name: "Product Manager - Custom Achievement Programs",
     link:
       "https://pluralsight.wd1.myworkdayjobs.com/en-US/Careers/job/Boston-MA/Product-Manager---Custom-Achievement-Programs_R0005532",
-    location: "Boston, Massachusetts",
+    location: "Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 5,
   },
   {
     id: "Savvas Learning",
@@ -300,7 +320,7 @@ export const data = [
       "https://us59.dayforcehcm.com/CandidatePortal/en-US/k12l/Posting/View/454",
     location: "Chandler, AZ  • Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: "N/A",
   },
   {
     id: "Savvas Learning",
@@ -311,7 +331,7 @@ export const data = [
       "https://us59.dayforcehcm.com/CandidatePortal/en-US/k12l/Posting/View/444",
     location: "Chandler, AZ  • Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 4,
   },
   {
     id: "Savvas Learning",
@@ -322,7 +342,7 @@ export const data = [
       "https://us59.dayforcehcm.com/CandidatePortal/en-US/k12l/Posting/View/442",
     location: "Chandler, AZ  • Boston, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "",
+    experienceSuggested: 1,
   },
   {
     id: "Curriculum Associates",
@@ -349,7 +369,7 @@ export const data = [
     company: "AdmitHub",
     role: "designer",
     name: "Senior Product Designer",
-    link: "https://www.admithub.com/about/jobs/?gh_jid=4221338003",
+    link: "admithub.com/about/jobs/?gh_jid=4221338003",
     location: "Boston, MA",
     sharedOn: "",
     experienceSuggested: 8,
@@ -412,7 +432,7 @@ export const data = [
     role: "pm",
     name: "Product Manager",
     link: "https://boards.greenhouse.io/edx/jobs/2629429",
-    location: "Boston, MA",
+    location: "Boston",
     sharedOn: "",
     experienceSuggested: 3,
   },
@@ -447,7 +467,7 @@ export const data = [
       "https://pearson.jobs/boston-ma/senior-research-scientist/AF780C60D1554B7BA4D212B8A3671691/job/",
     location: "Boston, Massachusetts",
     sharedOn: "",
-    experienceSuggested: "",
+    experienceSuggested: "N/A",
   },
   {
     id: "Pearson",

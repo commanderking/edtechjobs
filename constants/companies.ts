@@ -81,7 +81,7 @@ export const companies = [
     id: "Pluralsight",
     name: "Pluralsight",
     description:
-      "helps teams know more and work better together with stronger skills and improved processes",
+      "Helping teams know more and work better together with stronger skills and improved processes",
     targetGroups: ["workforce"],
     logo: "pluralsight_logo.png",
   },

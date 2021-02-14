@@ -12,7 +12,7 @@ import {
 import FilterStack from "features/jobs/components/FilterStack";
 import JobCard from "features/jobs/components/JobCard";
 import CompanyCard from "features/jobs/components/CompanyCard";
-import { roles, targetGroups } from "features/jobs/constants";
+import { roles, targetGroups, experienceLevels } from "features/jobs/constants";
 
 import {
   getInitialFilterState,
@@ -30,6 +30,9 @@ const JobsContainer = () => {
     getInitialFilterState(targetGroups)
   );
 
+  const [clickedYearsExperience, setClickedYearsExperience] = useState(
+    getInitialFilterState(experienceLevels)
+  );
   const [companies, setCompanies] = useState([]);
 
   // Important to shuffle inside useEffect because of server side rendering
@@ -42,11 +45,12 @@ const JobsContainer = () => {
           // @ts-ignore - data is read only currently - Job is mutable?
           data,
           clickedRoles,
-          clickedTargetGroups
+          clickedTargetGroups,
+          clickedYearsExperience
         )
       )
     );
-  }, [data, clickedRoles, clickedTargetGroups]);
+  }, [data, clickedRoles, clickedTargetGroups, clickedYearsExperience]);
 
   return (
     <div>
@@ -100,6 +104,12 @@ const JobsContainer = () => {
               filters={targetGroups}
               clickedFilters={clickedTargetGroups}
               setClickedFilters={setClickedTargetGroups}
+            />
+            <FilterStack
+              label="Experience (years)"
+              filters={experienceLevels}
+              clickedFilters={clickedYearsExperience}
+              setClickedFilters={setClickedYearsExperience}
             />
           </Box>
           <Heading size="xl" mt={20} mb={2}>

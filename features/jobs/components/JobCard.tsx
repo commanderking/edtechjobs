@@ -7,7 +7,15 @@ type Props = {
 };
 
 const JobCard = ({ jobDetail }: Props) => {
-  const { name, link, location, companyDetails, role, isNewPost } = jobDetail;
+  const {
+    name,
+    link,
+    location,
+    companyDetails,
+    role,
+    isNewPost,
+    experienceSuggested,
+  } = jobDetail;
   return (
     <a
       href={link}
@@ -35,6 +43,9 @@ const JobCard = ({ jobDetail }: Props) => {
           )}
         </Heading>
         <Text>{location}</Text>
+        <Text>
+          Experience Level: <Badge>{experienceSuggested}</Badge>
+        </Text>
       </Box>
     </a>
   );

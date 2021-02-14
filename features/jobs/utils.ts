@@ -50,9 +50,16 @@ const getActiveFilters = (filters: { [key: string]: boolean }) => {
   return activeFilters;
 };
 
-const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
+const getFilteredJobs = (
+  jobs: Job[],
+  roleFilters,
+  targetGroupFilters,
+  yearsExperienceFilters
+) => {
   const activeRoleFilters = getActiveFilters(roleFilters);
   const activeTargetGroupFilters = getActiveFilters(targetGroupFilters);
+
+  const activeYearsExperienceFilters = getActiveFilters(yearsExperienceFilters);
 
   const companiesById = _.keyBy(companies, "id");
 
@@ -78,21 +85,57 @@ const getFilteredJobs = (jobs: Job[], roleFilters, targetGroupFilters) => {
     });
   }
 
+  if (activeYearsExperienceFilters.length) {
+    filteredJobs = filteredJobs.filter((job) => {
+      const { experienceSuggested } = job;
+      if (experienceSuggested === "N/A") {
+        return true;
+      }
+
+      if (activeYearsExperienceFilters.includes("0-2")) {
+        return experienceSuggested >= 0 && experienceSuggested <= 2;
+      }
+
+      if (activeYearsExperienceFilters.includes("3-5")) {
+        return experienceSuggested >= 3 && experienceSuggested <= 5;
+      }
+
+      if (activeYearsExperienceFilters.includes("6+")) {
+        return experienceSuggested >= 6;
+      }
+    });
+  }
+
   return filteredJobs.map((job) => {
     return {
       ...job,
       companyDetails: companiesById[job.company],
       isNewPost: isNewPost(job),
+      experienceSuggested: getExperienceSuggested(job.experienceSuggested),
     };
   });
+};
+
+const getExperienceSuggested = (years: number | string) => {
+  if (years === "N/A") {
+    return "Any";
+  }
+
+  return `${years}+ years`;
 };
 
 export const getCompanyWithJobs = (
   jobs: Job[],
   roleFilters,
-  targetGroupFilters
+  targetGroupFilters,
+  yearsExperienceFilters
 ) => {
-  const filteredJobs = getFilteredJobs(jobs, roleFilters, targetGroupFilters);
+  const filteredJobs = getFilteredJobs(
+    jobs,
+    roleFilters,
+    targetGroupFilters,
+    yearsExperienceFilters
+  );
 
   const jobByCompany = _.groupBy(filteredJobs, "company");
 

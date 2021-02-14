@@ -50,6 +50,25 @@ const getActiveFilters = (filters: { [key: string]: boolean }) => {
   return activeFilters;
 };
 
+const toRelevantJobsForExperience = (activeYearsExperienceFilters) => (job) => {
+  const { experienceSuggested } = job;
+  if (experienceSuggested === "N/A") {
+    return true;
+  }
+
+  if (activeYearsExperienceFilters.includes("0-2")) {
+    return experienceSuggested >= 0 && experienceSuggested <= 2;
+  }
+
+  if (activeYearsExperienceFilters.includes("3-5")) {
+    return experienceSuggested >= 3 && experienceSuggested <= 5;
+  }
+
+  if (activeYearsExperienceFilters.includes("6+")) {
+    return experienceSuggested >= 6;
+  }
+};
+
 const getFilteredJobs = (
   jobs: Job[],
   roleFilters,
@@ -58,7 +77,6 @@ const getFilteredJobs = (
 ) => {
   const activeRoleFilters = getActiveFilters(roleFilters);
   const activeTargetGroupFilters = getActiveFilters(targetGroupFilters);
-
   const activeYearsExperienceFilters = getActiveFilters(yearsExperienceFilters);
 
   const companiesById = _.keyBy(companies, "id");
@@ -86,24 +104,9 @@ const getFilteredJobs = (
   }
 
   if (activeYearsExperienceFilters.length) {
-    filteredJobs = filteredJobs.filter((job) => {
-      const { experienceSuggested } = job;
-      if (experienceSuggested === "N/A") {
-        return true;
-      }
-
-      if (activeYearsExperienceFilters.includes("0-2")) {
-        return experienceSuggested >= 0 && experienceSuggested <= 2;
-      }
-
-      if (activeYearsExperienceFilters.includes("3-5")) {
-        return experienceSuggested >= 3 && experienceSuggested <= 5;
-      }
-
-      if (activeYearsExperienceFilters.includes("6+")) {
-        return experienceSuggested >= 6;
-      }
-    });
+    filteredJobs = filteredJobs.filter(
+      toRelevantJobsForExperience(activeYearsExperienceFilters)
+    );
   }
 
   return filteredJobs.map((job) => {

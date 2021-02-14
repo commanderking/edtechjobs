@@ -27,6 +27,10 @@ import {
 import { data } from "data/data_02_13_21";
 
 const JobsContainer = () => {
+  // Overall, this structure of separate state for different filter clicks likely
+  // won't scale well. Likely want a piece of state that takes all filters
+  // [{ filterType: "role", value: "pm "}, ...]
+  // and then parse later with util
   const [clickedRoles, setClickedRoles] = useState(
     getInitialFilterState(roles)
   );
@@ -122,10 +126,10 @@ const JobsContainer = () => {
                     </PopoverTrigger>
                     <PopoverContent>
                       <Box padding={5}>
-                        We believe you shouldn't let the years of experience
-                        prevent you from applying if you think you're a good
-                        fit. Please use it more as a guideline than a hard
-                        requirement!
+                        This is the years of experience listed on the job
+                        posting, but please use it more as a guideline than a
+                        hard requirement! If you think you're a good fit,
+                        consider applying anyway!
                       </Box>
                     </PopoverContent>
                   </Popover>

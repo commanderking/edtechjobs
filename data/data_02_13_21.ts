@@ -100,7 +100,7 @@ export const data = [
     link: "https://jobs.jobvite.com/curriculumassociates/job/oQkR9fwU",
     location: "North Billerica, MA",
     sharedOn: "1/31/2021",
-    experienceSuggested: "N/A",
+    experienceSuggested: 3,
   },
   {
     id: "Curriculum Associates",

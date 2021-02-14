@@ -12,6 +12,7 @@
 - Add Experience Level Filters and Labels to Jobs
 - More compact view of job postings / company
 - Some indication of which jobs are newly added
+- 17 new jobs added
 
 ### 1-31-21
 

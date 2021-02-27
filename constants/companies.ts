@@ -117,4 +117,11 @@ export const companies = [
     targetGroups: ["k12"],
     logo: "lexia_logo.png",
   },
+  {
+    id: "O'Reilly Media",
+    name: "O'Reilly Media",
+    description: "",
+    targetGroups: ["workforce"],
+    logo: "oreilly_logo.png",
+  },
 ];

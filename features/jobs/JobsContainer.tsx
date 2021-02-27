@@ -64,6 +64,16 @@ const JobsContainer = () => {
   return (
     <div>
       <Head>
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+          key="viewport"
+        />
+        <meta
+          name="description"
+          content="Find edtech jobs and companies in the Boston area"
+        />
+
         <title>Boston EdTech Companies and Jobs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

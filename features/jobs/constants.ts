@@ -1,13 +1,14 @@
 export const roles = [
+  { id: "data", name: "Analyst" },
+  { id: "customer_success", name: "Customer Success" },
+
+  { id: "designer", name: "Designer" },
   {
     id: "engineer",
     name: "Engineer",
   },
   { id: "pm", name: "Product Manager" },
-  { id: "designer", name: "Designer" },
   { id: "research", name: "Researcher" },
-  { id: "data", name: "Data Analyst" },
-  { id: "customer_success", name: "Customer Success" },
   { id: "ux", name: "User Experience" },
 ];
 

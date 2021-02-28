@@ -1,14 +1,15 @@
 export const roles = [
+  { id: "data", name: "Analytics" },
+  { id: "customer_success", name: "Customer Success" },
+
+  { id: "designer", name: "Design (UI + UX)" },
   {
     id: "engineer",
-    name: "Engineer",
+    name: "Engineering",
   },
-  { id: "pm", name: "Product Manager" },
-  { id: "designer", name: "Designer" },
-  { id: "research", name: "Researcher" },
-  { id: "data", name: "Data Analyst" },
-  { id: "customer_success", name: "Customer Success" },
-  { id: "ux", name: "User Experience" },
+  { id: "pm", name: "Product Management" },
+  { id: "research", name: "Research" },
+  { id: "sales", name: "Sales" },
 ];
 
 export const targetGroups = [

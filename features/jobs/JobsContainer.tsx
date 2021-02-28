@@ -24,7 +24,7 @@ import {
   getCompanyWithJobs,
   shuffle,
 } from "features/jobs/utils";
-import { data } from "data/data_02_13_21";
+import { data } from "data/data_02_28_21";
 
 const JobsContainer = () => {
   // Overall, this structure of separate state for different filter clicks likely
@@ -64,6 +64,16 @@ const JobsContainer = () => {
   return (
     <div>
       <Head>
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+          key="viewport"
+        />
+        <meta
+          name="description"
+          content="Find edtech jobs and companies in the Boston area"
+        />
+
         <title>Boston EdTech Companies and Jobs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -86,7 +96,7 @@ const JobsContainer = () => {
                 </Link>{" "}
               </Text>
               <Text>
-                Updated about every two weeks (Last updated - 2/13/2021)
+                Updated about every two weeks (Last updated - 2/28/2021)
               </Text>
               <Box mt={4}>
                 <a

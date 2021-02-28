@@ -14,7 +14,7 @@ export const data = [
     company: "AdmitHub",
     role: "designer",
     name: "Senior Product Designer",
-    link: "admithub.com/about/jobs/?gh_jid=4221338003",
+    link: "https://admithub.com/about/jobs/?gh_jid=4221338003",
     location: "Boston, MA",
     sharedOn: "2/13/2021",
     experienceSuggested: 8,

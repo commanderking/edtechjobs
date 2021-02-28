@@ -120,7 +120,8 @@ export const companies = [
   {
     id: "O'Reilly Media",
     name: "O'Reilly Media",
-    description: "",
+    description:
+      "Providing learning resources curated by experts for technology and business knowledge",
     targetGroups: ["workforce"],
     logo: "oreilly_logo.png",
   },

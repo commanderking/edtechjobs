@@ -32,7 +32,7 @@ export const data = [
   {
     id: "Cengage",
     company: "Cengage",
-    role: "ux",
+    role: "designer",
     name: "UX Researcher",
     link:
       "https://cengage.wd5.myworkdayjobs.com/en-US/CengageNorthAmericaCareers/job/US-Boston-Massachusetts/UX-Researcher_R2021-124",
@@ -242,7 +242,7 @@ export const data = [
   {
     id: "Mentor Collective",
     company: "Mentor Collective",
-    role: "ux",
+    role: "designer",
     name: "User Experience Designer",
     link:
       "https://angel.co/company/mentorcollective/jobs/1113972-user-experience-designer-ux-ui",
@@ -383,7 +383,7 @@ export const data = [
   {
     id: "Savvas Learning",
     company: "Savvas Learning",
-    role: "ux",
+    role: "designer",
     name: "Senior User Experience (UX) Designer",
     link:
       "https://us59.dayforcehcm.com/CandidatePortal/en-US/k12l/Posting/View/464",

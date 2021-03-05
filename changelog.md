@@ -6,6 +6,7 @@
 - Instructional Design Filter
 - How long job posting has been active? x2
 - Adding contacts at companies who are in the Boston EdTech Meetup to reach out to for more connections - x2
+- Email notification for when only certain roles get updated (or any filter selected)
 
 ### 2-13-21
 

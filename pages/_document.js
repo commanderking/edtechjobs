@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
             async
             defer
             data-domain="bostonedtechjobs.netlify.app"
-            src="https://plausible.io/js/plausible.js"
+            src="https://stats.bostonedtech.org/js/index.js"
           ></script>
           <script
             dangerouslySetInnerHTML={{

@@ -96,7 +96,7 @@ const JobsContainer = () => {
                 </Link>{" "}
               </Text>
               <Text>
-                Updated about every two weeks (Last updated - 2/28/2021)
+                Updated about every two weeks (Last updated - 3/12/2021)
               </Text>
               <Box mt={4}>
                 <a

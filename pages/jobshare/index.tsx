@@ -1,5 +1,6 @@
 import JobShareContainer from "features/jobshare/JobShareContainer";
-
-export default function JobShare() {
-  return <JobShareContainer />;
+import { AppProps } from "types/App";
+export default function JobShare({ lastUpdate }: AppProps) {
+  console.log("lastUpdate", lastUpdate);
+  return <JobShareContainer lastUpdate={lastUpdate} />;
 }

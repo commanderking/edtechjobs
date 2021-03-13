@@ -26,8 +26,13 @@ import {
   shuffle,
 } from "features/jobs/utils";
 import { data } from "data/data_03_14_21";
+import { LastUpdate } from "types/App";
 
-const JobsContainer = () => {
+type Props = {
+  lastUpdate: LastUpdate;
+};
+
+const JobsContainer = ({ lastUpdate }: Props) => {
   // Overall, this structure of separate state for different filter clicks likely
   // won't scale well. Likely want a piece of state that takes all filters
   // [{ filterType: "role", value: "pm "}, ...]
@@ -96,7 +101,8 @@ const JobsContainer = () => {
               </Link>{" "}
             </Text>
             <Text>
-              Updated about every two weeks (Last updated - 3/12/2021)
+              Updated about every two weeks (Last update -{" "}
+              {lastUpdate.toLocaleDateString()})
             </Text>
             <Stack
               mt={4}

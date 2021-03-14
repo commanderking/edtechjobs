@@ -7,6 +7,7 @@ export const roles = [
     id: "engineer",
     name: "Engineering",
   },
+  { id: "lxd", name: "Learning Design" },
   { id: "pm", name: "Product Management" },
   { id: "research", name: "Research" },
   { id: "sales", name: "Sales" },

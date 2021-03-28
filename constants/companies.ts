@@ -125,4 +125,12 @@ export const companies = [
     targetGroups: ["workforce"],
     logo: "oreilly_logo.png",
   },
+  {
+    id: "Harvard University",
+    name: "Harvard University",
+    description:
+      "Devoted to excellence in teaching, learning, and research, and to developing leaders who make a difference globally",
+    targetGroups: ["highered"],
+    logo: "harvard_university.png",
+  },
 ];

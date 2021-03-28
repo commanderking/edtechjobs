@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CSSReset />
       <Box maxWidth="824px" margin="auto" padding="20px" mt={10}>
-        <Component {...pageProps} lastUpdate={new Date("3/12/2021")} />
+        <Component {...pageProps} lastUpdate={new Date("3/28/2021")} />
       </Box>
     </ThemeProvider>
   );

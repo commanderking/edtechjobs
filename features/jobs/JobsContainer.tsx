@@ -25,7 +25,8 @@ import {
   getCompanyWithJobs,
   shuffle,
 } from "features/jobs/utils";
-import { data } from "data/data_03_14_21";
+// import { data } from "data/data_03_14_21";
+import data from "data/jobs.json";
 import { LastUpdate } from "types/App";
 
 type Props = {

@@ -52,7 +52,7 @@ const JobsContainer = ({ lastUpdate }: Props) => {
   );
   const [companies, setCompanies] = useState([]);
 
-  const [showOnlyNewJobs, setShowNewJobs] = useState(false);
+  const [showOnlyNewJobs, setShowOnlyNewJobs] = useState(false);
 
   // Important to shuffle inside useEffect because of server side rendering
   // Doing outside will result in text not matching server text
@@ -181,17 +181,19 @@ const JobsContainer = ({ lastUpdate }: Props) => {
             setClickedFilters={setClickedYearsExperience}
           />
 
-          {/* NOT SURE WHY THIS CHECKBOX HAS NO BORDER
-           <Checkbox
-            spacing="1rem"
+          <Checkbox
             size="lg"
-
-            // onChange={(event) => {
-            //   console.log("event", event);
-            // }}
+            colorScheme="teal"
+            value="hey"
+            onChange={(event) => {
+              setShowOnlyNewJobs(event.target.checked);
+            }}
           >
-            <Text fontSize="xl">Show Only Jobs Since Last Update</Text>
-          </Checkbox> */}
+            <Text fontSize="lg">
+              Show Only New Jobs Since Last Update (
+              {lastUpdate.toLocaleDateString()})
+            </Text>
+          </Checkbox>
         </Box>
         <Heading size="xl" mt={20} mb={2}>
           Companies and Jobs

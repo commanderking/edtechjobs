@@ -77,7 +77,8 @@ const getFilteredJobs = (
   jobs: Job[],
   roleFilters,
   targetGroupFilters,
-  yearsExperienceFilters
+  yearsExperienceFilters,
+  showOnlyNewJobs
 ) => {
   const activeRoleFilters = getActiveFilters(roleFilters);
   const activeTargetGroupFilters = getActiveFilters(targetGroupFilters);
@@ -85,7 +86,9 @@ const getFilteredJobs = (
 
   const companiesById = _.keyBy(companies, "id");
 
-  let filteredJobs = jobs;
+  let filteredJobs = showOnlyNewJobs
+    ? jobs.filter((job) => !job.sharedOn)
+    : jobs;
 
   if (activeRoleFilters.length) {
     filteredJobs = filteredJobs.filter((job) =>
@@ -135,13 +138,15 @@ export const getCompanyWithJobs = (
   jobs: Job[],
   roleFilters,
   targetGroupFilters,
-  yearsExperienceFilters
+  yearsExperienceFilters,
+  showOnlyNewJobs
 ) => {
   const filteredJobs = getFilteredJobs(
     jobs,
     roleFilters,
     targetGroupFilters,
-    yearsExperienceFilters
+    yearsExperienceFilters,
+    showOnlyNewJobs
   );
 
   const jobByCompany = _.groupBy(filteredJobs, "company");

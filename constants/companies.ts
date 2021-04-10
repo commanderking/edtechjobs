@@ -133,4 +133,28 @@ export const companies = [
     targetGroups: ["highered"],
     logo: "harvard_university.png",
   },
+  {
+    id: "The Concord Consortium",
+    name: "The Concord Consortium",
+    description:
+      "Advancing STEM inquiry through technology to equip learners and empower lives",
+    targetGroups: ["k12"],
+    logo: "concord_consortium_logo.png",
+  },
+  {
+    id: "Ascend Learning",
+    name: "Ascend Learning",
+    description:
+      "Developing online learning tools that help people enter, sustain and succeed in their careers,",
+    targetGroups: ["workforce"],
+    logo: "ascend_learning_logo.png",
+  },
+  {
+    id: "PTC",
+    name: "PTC",
+    description:
+      "Building digital solutions for real-world business challenges",
+    targetGroups: ["workforce"],
+    logo: "ptc_logo.png",
+  },
 ];

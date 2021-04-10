@@ -1,4 +1,4 @@
-import { Stack, Text, Wrap, WrapItem, Box, Divider } from "@chakra-ui/react";
+import { Stack, Text, Wrap, WrapItem, Box } from "@chakra-ui/react";
 import { FilterOption } from "features/jobs/types";
 import FilterButton from "features/jobs/components/FilterButton";
 import { filterClick } from "utils/plausible";
@@ -27,7 +27,7 @@ const FilterStack = ({
         )}
       </Box>
       <Wrap>
-        {filters.map((filter, index) => {
+        {filters.map((filter) => {
           return (
             <WrapItem key={filter.id}>
               <FilterButton

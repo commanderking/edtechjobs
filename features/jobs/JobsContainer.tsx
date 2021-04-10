@@ -12,6 +12,8 @@ import {
   PopoverTrigger,
   PopoverContent,
   Stack,
+  Checkbox,
+  CheckboxGroup,
 } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
 
@@ -50,6 +52,8 @@ const JobsContainer = ({ lastUpdate }: Props) => {
   );
   const [companies, setCompanies] = useState([]);
 
+  const [showOnlyNewJobs, setShowOnlyNewJobs] = useState(false);
+
   // Important to shuffle inside useEffect because of server side rendering
   // Doing outside will result in text not matching server text
   // https://github.com/vercel/next.js/issues/3108
@@ -61,11 +65,18 @@ const JobsContainer = ({ lastUpdate }: Props) => {
           data,
           clickedRoles,
           clickedTargetGroups,
-          clickedYearsExperience
+          clickedYearsExperience,
+          showOnlyNewJobs
         )
       )
     );
-  }, [data, clickedRoles, clickedTargetGroups, clickedYearsExperience]);
+  }, [
+    data,
+    clickedRoles,
+    clickedTargetGroups,
+    clickedYearsExperience,
+    showOnlyNewJobs,
+  ]);
 
   return (
     <div>
@@ -169,6 +180,20 @@ const JobsContainer = ({ lastUpdate }: Props) => {
             clickedFilters={clickedYearsExperience}
             setClickedFilters={setClickedYearsExperience}
           />
+
+          <Checkbox
+            size="lg"
+            colorScheme="teal"
+            value="hey"
+            onChange={(event) => {
+              setShowOnlyNewJobs(event.target.checked);
+            }}
+          >
+            <Text fontSize="lg">
+              Show Only New Jobs Since Last Update (
+              {lastUpdate.toLocaleDateString()})
+            </Text>
+          </Checkbox>
         </Box>
         <Heading size="xl" mt={20} mb={2}>
           Companies and Jobs

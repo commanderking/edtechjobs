@@ -145,7 +145,7 @@ export const companies = [
     id: "Ascend Learning",
     name: "Ascend Learning",
     description:
-      "Developing online learning tools that help people enter, sustain and succeed in their careers,",
+      "Developing online learning tools that help people enter, sustain and succeed in their careers",
     targetGroups: ["workforce"],
     logo: "ascend_learning_logo.png",
   },

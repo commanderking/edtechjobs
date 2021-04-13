@@ -13,7 +13,6 @@ import {
   PopoverContent,
   Stack,
   Checkbox,
-  CheckboxGroup,
 } from "@chakra-ui/react";
 import { WarningIcon } from "@chakra-ui/icons";
 
@@ -29,7 +28,7 @@ import {
 } from "features/jobs/utils";
 import data from "data/jobs.json";
 import { LastUpdate } from "types/App";
-
+import { filterClick } from "utils/plausible";
 type Props = {
   lastUpdate: LastUpdate;
 };
@@ -184,8 +183,8 @@ const JobsContainer = ({ lastUpdate }: Props) => {
           <Checkbox
             size="lg"
             colorScheme="teal"
-            value="hey"
             onChange={(event) => {
+              filterClick("new_jobs_only");
               setShowOnlyNewJobs(event.target.checked);
             }}
           >

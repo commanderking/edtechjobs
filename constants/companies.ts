@@ -157,4 +157,28 @@ export const companies = [
     targetGroups: ["workforce"],
     logo: "ptc_logo.png",
   },
+  {
+    id: "FableVision",
+    name: "FableVision",
+    description:
+      "Developing a wide array of engaging media and interactives that inspire, teach, and move people to action",
+    targetGroups: ["k12"],
+    logo: "fablevision_logo.png",
+  },
+  {
+    id: "GBH",
+    name: "GBH",
+    description:
+      "Working with communities to research, develop, and distribute quality media-integrated resources to support equitable learning",
+    targetGroups: ["k12"],
+    logo: "gbh_logo.png",
+  },
+  {
+    id: "Extension Engine",
+    name: "Extension Engine",
+    description:
+      "Partner with Extension Engine to design, build, and grow Custom Learning Experiences.",
+    targetGroups: ["highered", "workforce"],
+    logo: "extension_engine_logo.png",
+  },
 ];

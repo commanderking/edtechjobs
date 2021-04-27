@@ -14,7 +14,7 @@ export const filterClick = (filter: string) => {
   plausible("FILTER_CLICK", { props: { filter } });
 };
 
-export const meetupClick = () => {
+export const meetupClick = (url: string) => {
   // @ts-ignore
-  plausible("MEETUP_LINK");
+  plausible("MEETUP_LINK", { props: { url } });
 };

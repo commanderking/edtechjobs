@@ -13,7 +13,11 @@ import {
   PopoverContent,
   Stack,
   Checkbox,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+
 import { WarningIcon } from "@chakra-ui/icons";
 
 import FilterStack from "features/jobs/components/FilterStack";
@@ -28,7 +32,7 @@ import {
 } from "features/jobs/utils";
 import data from "data/jobs.json";
 import { LastUpdate } from "types/App";
-import { filterClick } from "utils/plausible";
+import { filterClick, meetupClick } from "utils/plausible";
 type Props = {
   lastUpdate: LastUpdate;
 };
@@ -140,6 +144,7 @@ const JobsContainer = ({ lastUpdate }: Props) => {
             </Stack>
           </Box>
         </Box>
+
         <Box mt={5} padding={4} border="1px solid lightgray">
           <Heading size="md">Filter by Job and Company Info</Heading>
           <FilterStack
@@ -194,10 +199,26 @@ const JobsContainer = ({ lastUpdate }: Props) => {
             </Text>
           </Checkbox>
         </Box>
-        <Heading size="xl" mt={20} mb={2}>
+        <Alert mt={10} status="info" padding={5}>
+          <AlertIcon />
+          Boston EdTech Meetup is hosting a Job Fair on Tuesday, 5/25.{"  "}
+          <Box ml={1}>
+            <Link
+              href="https://www.meetup.com/Boston-EdTech-Meetup/events/277741963/"
+              isExternal
+              onClick={() => {
+                meetupClick(
+                  "https://www.meetup.com/Boston-EdTech-Meetup/events/277741963/"
+                );
+              }}
+            >
+              Sign up here. <ExternalLinkIcon mx="2px" />
+            </Link>
+          </Box>
+        </Alert>
+        <Heading size="xl" mt={10} mb={2}>
           Companies and Jobs
         </Heading>
-
         <Box padding={4} border="1px solid lightgray">
           {companies.map((company) => {
             return (

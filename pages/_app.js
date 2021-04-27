@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider>
       <CSSReset />
       <Box maxWidth="824px" margin="auto" padding="20px" mt={10}>
-        <Component {...pageProps} lastUpdate={new Date("4/9/2021")} />
+        <Component {...pageProps} lastUpdate={new Date("4/27/2021")} />
       </Box>
     </ChakraProvider>
   );

@@ -73,6 +73,15 @@ const toRelevantJobsForExperience = (
   }
 };
 
+export const addUtmSource = (link: string) => {
+  const utmSource = "utm_source=jobs.bostonedtech.org";
+  if (link.includes("?")) {
+    return `${link}&${utmSource}`;
+  }
+
+  return `${link}?${utmSource}`;
+};
+
 const getFilteredJobs = (
   jobs: Job[],
   roleFilters,
@@ -122,6 +131,7 @@ const getFilteredJobs = (
       companyDetails: companiesById[job.company],
       isNewPost: isNewPost(job),
       experienceSuggested: getExperienceSuggested(job.experienceSuggested),
+      link: addUtmSource(job.link),
     };
   });
 };

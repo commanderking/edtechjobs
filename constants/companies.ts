@@ -181,4 +181,12 @@ export const companies = [
     targetGroups: ["highered", "workforce"],
     logo: "extension_engine_logo.png",
   },
+  {
+    id: "MIT Open Learning",
+    name: "MIT Open Learning",
+    description:
+      "transforming teaching and learning at MIT and around the globe through the innovative use of digital technologies.",
+    targetGroups: ["highered"],
+    logo: "mit_open_learning_logo.png",
+  },
 ];

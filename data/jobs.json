@@ -242,16 +242,6 @@
   {
     "id": "edX",
     "company": "edX",
-    "role": "pm",
-    "name": "Director of Product Management, Enterprise",
-    "link": "https://boards.greenhouse.io/edx/jobs/3018624",
-    "location": "Cambridge",
-    "sharedOn": "4/10/2021",
-    "experienceSuggested": 5
-  },
-  {
-    "id": "edX",
-    "company": "edX",
     "role": "engineer",
     "name": "Summer Engineering Internship (Non-Traditional Backgrounds)",
     "link": "https://boards.greenhouse.io/edx/jobs/2449873",
@@ -288,16 +278,6 @@
     "location": "BOSTON, MA, OR REMOTE",
     "sharedOn": "3/28/2021",
     "experienceSuggested": "N/A"
-  },
-  {
-    "id": "Ellevation Education",
-    "company": "Ellevation Education",
-    "role": "engineer",
-    "name": "Senior Software Engineer (Tech Lead)",
-    "link": "https://jobs.lever.co/ellevationeducation/bdb19038-8b5f-4f9a-99b1-af95f513f2c3",
-    "location": "Boston, MA",
-    "sharedOn": "4/10/2021",
-    "experienceSuggested": 5
   },
   {
     "id": "Ellevation Education",
@@ -738,5 +718,65 @@
     "location": "Chandler, AZ  • Boston, MA",
     "sharedOn": "",
     "experienceSuggested": 5
+  },
+  {
+    "id": "BetterLesson",
+    "company": "BetterLesson",
+    "role": "pm",
+    "name": "Senior Product Manager",
+    "link": "https://betterlesson.com/about-us/jobs/?gh_jid=4520995003",
+    "location": "Remote",
+    "sharedOn": "",
+    "experienceSuggested": 2
+  },
+  {
+    "id": "Education First",
+    "company": "Education First",
+    "role": "engineer",
+    "name": "Senior Software Engineer II",
+    "link": "https://careers.ef.com/job/?jobid=21860",
+    "location": "Boston, United States",
+    "sharedOn": "",
+    "experienceSuggested": "N/A"
+  },
+  {
+    "id": "edX",
+    "company": "edX",
+    "role": "engineer",
+    "name": "Software Engineer - Frontend",
+    "link": "https://boards.greenhouse.io/edx/jobs/2713982",
+    "location": "Cambridge",
+    "sharedOn": "",
+    "experienceSuggested": 3
+  },
+  {
+    "id": "edX",
+    "company": "edX",
+    "role": "designer",
+    "name": "Product Designer",
+    "link": "https://boards.greenhouse.io/edx/jobs/3128272",
+    "location": "Cambridge",
+    "sharedOn": "",
+    "experienceSuggested": 3
+  },
+  {
+    "id": "Curriculum Associates",
+    "company": "Curriculum Associates",
+    "role": "pm",
+    "name": "Associate Product Manager, Mathematics",
+    "link": "https://jobs.jobvite.com/curriculumassociates/job/oaIhffw8",
+    "location": "Remote",
+    "sharedOn": "",
+    "experienceSuggested": 1
+  },
+  {
+    "id": "MIT Open Learning",
+    "company": "MIT Open Learning",
+    "role": "lxd",
+    "name": "Learning Engineer",
+    "link": "https://careers.peopleclick.com/careerscp/client_mit/external/jobDetails/jobDetail.html?jobPostId=20492&localeCode=en-us",
+    "location": "Cambridge",
+    "sharedOn": "",
+    "experienceSuggested": 3
   }
 ]

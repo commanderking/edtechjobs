@@ -199,7 +199,7 @@ const JobsContainer = ({ lastUpdate }: Props) => {
             </Text>
           </Checkbox>
         </Box>
-        <Alert mt={10} status="info" padding={5}>
+        {/* <Alert mt={10} status="info" padding={5}>
           <AlertIcon />
           Boston EdTech Meetup is hosting a Job Fair on Tuesday, 5/25.{"  "}
           <Box ml={1}>
@@ -215,7 +215,7 @@ const JobsContainer = ({ lastUpdate }: Props) => {
               Sign up here. <ExternalLinkIcon mx="2px" />
             </Link>
           </Box>
-        </Alert>
+        </Alert> */}
         <Heading size="xl" mt={10} mb={2}>
           Companies and Jobs
         </Heading>

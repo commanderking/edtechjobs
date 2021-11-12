@@ -32,7 +32,9 @@ import {
 } from "features/jobs/utils";
 import data from "data/jobs.json";
 import { LastUpdate } from "types/App";
-import { filterClick, meetupClick } from "utils/plausible";
+import { filterClick } from "utils/plausible";
+import Companies from "features/jobs/components/Companies";
+
 type Props = {
   lastUpdate: LastUpdate;
 };
@@ -81,6 +83,9 @@ const JobsContainer = ({ lastUpdate }: Props) => {
     showOnlyNewJobs,
   ]);
 
+  // Hide the filters and job specific links as we're no longer updating
+  const showJobFilterAndIndividualJobs = false;
+
   return (
     <div>
       <Head>
@@ -114,91 +119,97 @@ const JobsContainer = ({ lastUpdate }: Props) => {
                 Boston EdTech Meetup
               </Link>{" "}
             </Text>
-            <Text>
-              Updated about every two weeks (Last update -{" "}
-              {lastUpdate.toLocaleDateString()})
-            </Text>
-            <Stack
-              mt={4}
-              direction={["column", "row"]}
-              spacing="24px"
-              justify="center"
-            >
+            {showJobFilterAndIndividualJobs && (
               <Box>
-                <a
-                  href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
-                  target="_blank"
+                <Text>
+                  Updated about every two weeks (Last update -{" "}
+                  {lastUpdate.toLocaleDateString()})
+                </Text>
+                <Stack
+                  mt={4}
+                  direction={["column", "row"]}
+                  spacing="24px"
+                  justify="center"
                 >
-                  <Button variant="outline" colorScheme="red">
-                    Sign up For Updates
-                  </Button>
-                </a>
+                  <Box>
+                    <a
+                      href="https://share.hsforms.com/1llEukeA6S8W3GJyxOxXUTg1o8no"
+                      target="_blank"
+                    >
+                      <Button variant="outline" colorScheme="red">
+                        Sign up For Updates
+                      </Button>
+                    </a>
+                  </Box>
+                  <Box>
+                    <a href="/jobshare">
+                      <Button variant="outline" colorScheme="red">
+                        Share a Job
+                      </Button>
+                    </a>
+                  </Box>
+                </Stack>
               </Box>
-              <Box>
-                <a href="/jobshare">
-                  <Button variant="outline" colorScheme="red">
-                    Share a Job
-                  </Button>
-                </a>
-              </Box>
-            </Stack>
+            )}
           </Box>
         </Box>
 
-        <Box mt={5} padding={4} border="1px solid lightgray">
-          <Heading size="md">Filter by Job and Company Info</Heading>
-          <FilterStack
-            label="Role"
-            filters={roles}
-            clickedFilters={clickedRoles}
-            setClickedFilters={setClickedRoles}
-          />
-          <FilterStack
-            label="Target Group"
-            filters={targetGroups}
-            clickedFilters={clickedTargetGroups}
-            setClickedFilters={setClickedTargetGroups}
-          />
-          <FilterStack
-            label={
-              <React.Fragment>
-                <Text as="span" fontSize="xl" textAlign="left" mr={2}>
-                  {"Experience"}
-                </Text>
-                <Popover>
-                  <PopoverTrigger>
-                    <WarningIcon color="red.500" />
-                  </PopoverTrigger>
-                  <PopoverContent>
-                    <Box padding={5}>
-                      This is the years of experience listed on the job posting,
-                      but please use it more as a guideline than a hard
-                      requirement! If you think you're a good fit, consider
-                      applying anyway!
-                    </Box>
-                  </PopoverContent>
-                </Popover>
-              </React.Fragment>
-            }
-            filters={experienceLevels}
-            clickedFilters={clickedYearsExperience}
-            setClickedFilters={setClickedYearsExperience}
-          />
+        {showJobFilterAndIndividualJobs && (
+          <Box mt={5} padding={4} border="1px solid lightgray">
+            <Heading size="md">Filter by Job and Company Info</Heading>
+            <FilterStack
+              label="Role"
+              filters={roles}
+              clickedFilters={clickedRoles}
+              setClickedFilters={setClickedRoles}
+            />
+            <FilterStack
+              label="Target Group"
+              filters={targetGroups}
+              clickedFilters={clickedTargetGroups}
+              setClickedFilters={setClickedTargetGroups}
+            />
+            <FilterStack
+              label={
+                <React.Fragment>
+                  <Text as="span" fontSize="xl" textAlign="left" mr={2}>
+                    {"Experience"}
+                  </Text>
+                  <Popover>
+                    <PopoverTrigger>
+                      <WarningIcon color="red.500" />
+                    </PopoverTrigger>
+                    <PopoverContent>
+                      <Box padding={5}>
+                        This is the years of experience listed on the job
+                        posting, but please use it more as a guideline than a
+                        hard requirement! If you think you're a good fit,
+                        consider applying anyway!
+                      </Box>
+                    </PopoverContent>
+                  </Popover>
+                </React.Fragment>
+              }
+              filters={experienceLevels}
+              clickedFilters={clickedYearsExperience}
+              setClickedFilters={setClickedYearsExperience}
+            />
 
-          <Checkbox
-            size="lg"
-            colorScheme="teal"
-            onChange={(event) => {
-              filterClick("new_jobs_only");
-              setShowOnlyNewJobs(event.target.checked);
-            }}
-          >
-            <Text fontSize="lg">
-              Show Only New Jobs Since Last Update (
-              {lastUpdate.toLocaleDateString()})
-            </Text>
-          </Checkbox>
-        </Box>
+            <Checkbox
+              size="lg"
+              colorScheme="teal"
+              onChange={(event) => {
+                filterClick("new_jobs_only");
+                setShowOnlyNewJobs(event.target.checked);
+              }}
+            >
+              <Text fontSize="lg">
+                Show Only New Jobs Since Last Update (
+                {lastUpdate.toLocaleDateString()})
+              </Text>
+            </Checkbox>
+          </Box>
+        )}
         {/* <Alert mt={10} status="info" padding={5}>
           <AlertIcon />
           Boston EdTech Meetup is hosting a Job Fair on Tuesday, 5/25.{"  "}
@@ -216,14 +227,13 @@ const JobsContainer = ({ lastUpdate }: Props) => {
             </Link>
           </Box>
         </Alert> */}
-        <Heading size="xl" mt={10} mb={2}>
-          Companies and Jobs
-        </Heading>
         <Box padding={4} border="1px solid lightgray">
-          {companies.map((company) => {
+          <Companies />
+
+          {/* {companies.map((company) => {
             return (
               <Box mb={10} key={company.id}>
-                <CompanyCard companyWithJobs={company} />
+                <CompanyCard company={company} />
                 <SimpleGrid spacing="20px" minChildWidth={"250px"}>
                   {company.jobs.map((job) => {
                     // @ts-ignore - need to coerce string value of targetGroup from raw data to Enum
@@ -233,7 +243,7 @@ const JobsContainer = ({ lastUpdate }: Props) => {
                 <Divider mt={10} />
               </Box>
             );
-          })}
+          })} */}
         </Box>
       </main>
     </div>

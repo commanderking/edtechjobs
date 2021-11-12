@@ -27,6 +27,7 @@ export type Company = {
   description: string;
   targetGroups: TargetGroup[];
   logo: string;
+  jobBoardUrl: string;
 };
 
 export type JobDetail = Job & {
